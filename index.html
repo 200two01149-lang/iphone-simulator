@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 아이폰</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100dvh;background:#202127;display:flex;justify-content:center;align-items:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:white}
+.phone{position:relative;width:min(390px,100vw);height:min(844px,94dvh);border:8px solid #111;border-radius:52px;overflow:hidden;background:linear-gradient(145deg,#152c73,#9953a3 55%,#ffae7e);box-shadow:0 20px 70px #0008}
+.island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:115px;height:32px;background:#080808;border-radius:30px;z-index:10}
+.status{position:absolute;top:20px;left:30px;font-size:14px;font-weight:700;z-index:9}
+.screen{position:absolute;inset:0;padding:75px 20px 35px;text-align:center}
+.clock{font-size:75px;font-weight:200;letter-spacing:-4px;margin-top:55px}
+.date{font-size:20px}
+.hint{position:absolute;bottom:65px;left:0;right:0;font-size:15px}
+.home{display:none}
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:23px 10px;margin-top:25px}
+.app{cursor:pointer;text-align:center;font-size:11px}
+.icon{width:58px;height:58px;border-radius:15px;display:grid;place-items:center;font-size:30px;margin:0 auto 7px;background:#fff;color:#222}
+.dock{position:absolute;bottom:42px;left:18px;right:18px;background:#ffffff55;border-radius:26px;padding:12px;display:flex;justify-content:space-around}
+.dock .icon{margin:0}
+.bar{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:125px;height:5px;border-radius:5px;background:white;z-index:12;cursor:pointer}
+.appview{display:none;position:absolute;inset:0;background:#f5f5f7;color:#111;padding:80px 25px;text-align:center;z-index:8}
+.appview h1{margin-top:50px}
+@media(max-width:600px){body{background:#000}.phone{width:100vw;height:100dvh;border:0;border-radius:0;box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="phone">
+<div class="island"></div>
+<div class="status" id="smalltime">9:41</div>
+<div class="screen" id="lock" onclick="unlock()">
+<div class="date" id="date"></div>
+<div class="clock" id="clock">9:41</div>
+<div class="hint">화면을 누르거나 위로 밀어 잠금 해제 ↑</div>
+</div>
+<div class="screen home" id="home">
+<div class="apps" id="apps"></div>
+<div class="dock">
+<div class="app" onclick="openApp('전화')"><div class="icon" style="background:#38c65a;color:white">☎</div></div>
+<div class="app" onclick="openApp('Safari')"><div class="icon">🌐</div></div>
+<div class="app" onclick="openApp('메시지')"><div class="icon" style="background:#38c65a;color:white">💬</div></div>
+<div class="app" onclick="openApp('음악')"><div class="icon">🎵</div></div>
+</div>
+</div>
+<div class="appview" id="appview">
+<h1 id="appname"></h1>
+<p>앱이 실행되었어요!</p>
+<p>아래 막대를 누르면 홈으로 돌아가요.</p>
+</div>
+<div class="bar" onclick="goHome()"></div>
+</div>
+<script>
+const names=[['📅','캘린더'],['📷','카메라'],['🖼️','사진'],['⚙️','설정'],['☀️','날씨'],['📝','메모'],['🕒','시계'],['🗺️','지도']];
+document.getElementById('apps').innerHTML=names.map(([emoji,name])=>'<div class="app" onclick="openApp(\''+name+'\')"><div class="icon">'+emoji+'</div>'+name+'</div>').join('');
+function updateTime(){
+const now=new Date();
+const t=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+document.getElementById('clock').textContent=t;
+document.getElementById('smalltime').textContent=t;
+document.getElementById('date').textContent=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'long'}).format(now);
+}
+updateTime();setInterval(updateTime,10000);
+function unlock(){document.getElementById('lock').style.display='none';document.getElementById('home').style.display='block'}
+function openApp(name){document.getElementById('appname').textContent=name;document.getElementById('appview').style.display='block'}
+function goHome(){document.getElementById('lock').style.display='none';document.getElementById('home').style.display='block';document.getElementById('appview').style.display='none'}
+let startY=0;
+document.getElementById('lock').addEventListener('touchstart',e=>startY=e.touches[0].clientY,{passive:true});
+document.getElementById('lock').addEventListener('touchend',e=>{if(startY-e.changedTouches[0].clientY>40)unlock()},{passive:true});
+</script>
+</body>
+</html>

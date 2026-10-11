@@ -11,6 +11,29 @@
 .phone .lock:not(.dragging){visibility:visible}
 .phone .lock.unlocked{visibility:hidden;transition:transform .62s cubic-bezier(.22,1,.36,1),opacity .5s ease,visibility 0s linear .62s}
 @media(prefers-reduced-motion:reduce){.phone .home,.phone .lock{transition-duration:.01ms}}
+
+/* 설정 앱 전용 디자인 — 기존 홈 화면 스타일은 변경하지 않음 */
+.phone .wallpaper,.phone .home,.phone .view{filter:brightness(var(--sim-brightness,1))}.phone .home{filter:none}.phone.locked .home{filter:blur(7px)}.settings-dark .settings-page{background:#1c1c1e;color:#fff}.settings-dark .settings-group{background:#2c2c2e}.settings-dark .settings-row{border-color:#444}.settings-dark .settings-row .stext{color:#fff}.settings-page{height:100%;overflow-y:auto;background:#f2f2f7;color:#111;padding:10px 16px 34px}
+.settings-title{font-size:32px;font-weight:750;letter-spacing:-1px;margin:10px 4px 18px}
+.settings-group{background:#fff;border-radius:12px;overflow:hidden;margin:0 0 23px}
+.settings-row{display:flex;align-items:center;gap:12px;min-height:48px;padding:9px 14px;border-bottom:1px solid #e5e5ea;cursor:pointer}
+.settings-row:last-child{border-bottom:0}
+.settings-row .sicon{width:29px;height:29px;flex-shrink:0;border-radius:7px;display:grid;place-items:center;background:#8e8e93;color:white;font-size:17px;font-weight:650}
+.settings-row .stext{flex:1;font-size:15px}
+.settings-row .sdetail{font-size:13px;color:#8e8e93}
+.settings-row .schevron{font-size:22px;color:#c7c7cc;font-weight:300}
+.settings-row.profile{min-height:80px}
+.settings-row.profile .sicon{width:54px;height:54px;border-radius:50%;font-size:23px;background:#b6b8c0}
+.settings-row.profile .stext b{font-size:18px}
+.settings-row.profile .stext small{display:block;color:#8e8e93;font-size:12px;margin-top:4px}
+.settings-switch{position:relative;flex-shrink:0;width:49px;height:30px;border:0;border-radius:20px;background:#e5e5ea;cursor:pointer;transition:background .2s}
+.settings-switch:before{content:'';position:absolute;top:2px;left:2px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0003;transition:transform .2s}
+.settings-switch.on{background:#34c759}
+.settings-switch.on:before{transform:translateX(19px)}
+.settings-caption{font-size:12px;color:#777;margin:-13px 8px 22px;line-height:1.5}
+.settings-slider{width:100%;accent-color:#007aff}
+.settings-subtitle{font-size:13px;color:#8e8e93;margin:8px 8px 7px}
+.settings-page .settings-row:focus-visible,.settings-switch:focus-visible{outline:2px solid #007aff;outline-offset:-2px}
 </style></head><body><div class="device"><main class="phone locked" id="phone"><svg class="wallpaper" viewBox="0 0 380 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#70001c"/><stop offset=".45" stop-color="#d40925"/><stop offset="1" stop-color="#70002e"/></linearGradient><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff7927"/><stop offset=".6" stop-color="#f12a39"/><stop offset="1" stop-color="#b70043"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6294d"/><stop offset=".55" stop-color="#a00042"/><stop offset="1" stop-color="#460038"/></linearGradient><linearGradient id="c" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f72c64"/><stop offset=".5" stop-color="#f74a7a"/><stop offset="1" stop-color="#8a003b"/></linearGradient></defs><rect width="380" height="800" fill="url(#bg)"/><path d="M-70 55 C100 50 120 230 390 300 L410 590 C190 600 100 465 -50 320Z" fill="url(#a)"/><path d="M-80 310 C120 440 195 400 420 490 L420 720 C240 595 120 660 -50 540Z" fill="url(#b)"/><path d="M-70 720 C95 590 230 635 410 575 L410 830 L-70 830Z" fill="url(#c)"/><path d="M-30 760 C120 640 205 670 405 610" stroke="#ff7892" stroke-width="4" opacity=".45" fill="none"/></svg><div class="shade"></div><div class="notch"></div><div class="status"><span id="time">9:41</span><span class="signals"><svg viewBox="0 0 20 15"><path fill="white" d="M0 12h3v3H0zm5-3h3v6H5zm5-4h3v10h-3zm5-5h3v15h-3z"/></svg><svg viewBox="0 0 20 15"><path fill="white" d="M1 4Q10-3 19 4L10 14Z"/></svg><svg viewBox="0 0 25 14"><rect x="1" y="1" width="20" height="12" rx="3" stroke="white" stroke-width="1.5" fill="none"/><rect x="3.5" y="3.5" width="14" height="7" rx="1" fill="white"/><rect x="22" y="5" width="2" height="4" rx="1" fill="white"/></svg></span></div><section class="home" id="home"><div class="grid" id="apps"></div><div class="dots">● ● ○</div><div class="dock" id="dock"></div></section><section class="lock" id="lock"><div class="lockdate" id="date"></div><div class="locktime" id="bigtime"></div><div class="lockhint">위로 밀거나 화면을 눌러 잠금 해제</div></section><section class="view" id="view"><div class="viewheader"><button class="back" id="back" onclick="back()">‹ 홈</button><span class="viewtitle" id="viewtitle">메시지</span><span style="width:35px"></span></div><div class="list" id="list"></div><div class="chat" id="chat"><div class="messages" id="messages"></div><form class="composer" id="form"><input id="input" placeholder="iMessage" autocomplete="off" aria-label="메시지 입력"><button type="submit" aria-label="전송">↑</button></form></div></section><div class="bar" onclick="goHome()"></div></main></div><script>
 const svg=(body,bg='#fff')=>`<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="13" fill="${bg}"/>${body}</svg>`;
 const icons={
@@ -41,11 +64,76 @@ Music:svg('<path d="M27 16 44 12v28a8 8 0 1 1-5-7V22l-12 3v20a8 8 0 1 1-5-7V19z"
 const order=['FaceTime','Calendar','Photos','Camera','Mail','Clock','Maps','Weather','Reminders','Notes','Stocks','News','Books','App Store','Podcasts','TV','Health','Home','Wallet','Settings'];const ko={'Calendar':'캘린더','Photos':'사진','Camera':'카메라','Clock':'시계','Maps':'지도','Weather':'날씨','Reminders':'미리 알림','Notes':'메모','Stocks':'주식','News':'뉴스','Books':'도서','App Store':'App Store','Podcasts':'팟캐스트','Health':'건강','Home':'홈','Wallet':'지갑','Settings':'설정','Phone':'전화','Messages':'메시지','Music':'음악'};
 function app(name){const el=document.createElement('div');el.className='app';el.innerHTML=`<div class="appicon">${icons[name]}</div><div class="appname">${ko[name]||name}</div>`;el.onclick=()=>openApp(name);return el}order.forEach(n=>document.getElementById('apps').append(app(n)));['Phone','Safari','Messages','Music'].forEach(n=>document.getElementById('dock').append(app(n)));
 function tick(){const d=new Date(),t=`${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;document.getElementById('time').textContent=t;document.getElementById('bigtime').textContent=t;document.getElementById('date').textContent=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'long'}).format(d)}tick();setInterval(tick,10000);
-let current=null;const contacts=['민지','지훈','엄마'];let history={};try{history=JSON.parse(localStorage.getItem('iphone-chat-v3')||'{}')}catch{};function save(){localStorage.setItem('iphone-chat-v3',JSON.stringify(history))}function openApp(name){document.getElementById('view').classList.add('show');document.getElementById('viewtitle').textContent=ko[name]||name;document.getElementById('chat').classList.remove('open');document.getElementById('back').textContent='‹ 홈';current=null;if(name==='Messages')showList();else document.getElementById('list').innerHTML=`<div class="placeholder">${ko[name]||name} 앱<br><br>이 앱의 기능은 다음 단계에서 추가할 수 있어요.</div>`}
+let current=null;const contacts=['민지','지훈','엄마'];let history={};try{history=JSON.parse(localStorage.getItem('iphone-chat-v3')||'{}')}catch{};function save(){localStorage.setItem('iphone-chat-v3',JSON.stringify(history))}function openApp(name){settingsSubpage='';document.getElementById('list').style.height='';document.getElementById('view').classList.add('show');document.getElementById('viewtitle').textContent=ko[name]||name;document.getElementById('chat').classList.remove('open');document.getElementById('back').textContent='‹ 홈';current=null;if(name==='Messages')showList();else if(name==='Settings')showSettings();else document.getElementById('list').innerHTML=`<div class="placeholder">${ko[name]||name} 앱<br><br>이 앱의 기능은 다음 단계에서 추가할 수 있어요.</div>`}
 function showList(){document.getElementById('viewtitle').textContent='메시지';document.getElementById('chat').classList.remove('open');document.getElementById('back').textContent='‹ 홈';document.getElementById('list').innerHTML=contacts.map((n,i)=>`<div class="conversation" data-i="${i}"><div class="avatar">${n[0]}</div><div><b>${n}</b><div class="preview">${(history[n]||[]).at(-1)?.text||'대화를 시작해 보세요'}</div></div></div>`).join('');document.querySelectorAll('.conversation').forEach(el=>el.onclick=()=>openChat(contacts[+el.dataset.i]))}
 function openChat(name){current=name;document.getElementById('chat').classList.add('open');document.getElementById('viewtitle').textContent=name;document.getElementById('back').textContent='‹ 메시지';renderChat()}function renderChat(){const area=document.getElementById('messages');area.replaceChildren();(history[current]||[]).forEach(m=>{const el=document.createElement('div');el.className='bubble '+(m.me?'mine':'theirs');const t=document.createElement('div');t.textContent=m.text;const stamp=document.createElement('div');stamp.className='stamp';stamp.textContent=m.time;el.append(t,stamp);area.append(el)});area.scrollTop=area.scrollHeight}function addMessage(text,me){if(!current)return;history[current]??=[];history[current].push({text,me,time:new Date().toLocaleTimeString('ko-KR',{hour:'numeric',minute:'2-digit'})});save();renderChat()}
 document.getElementById('form').onsubmit=e=>{e.preventDefault();const input=document.getElementById('input');const text=input.value.trim();if(!text||!current)return;const recipient=current;addMessage(text,true);input.value='';setTimeout(()=>{if(!history[recipient])history[recipient]=[];const reply=/안녕|ㅎㅇ/.test(text)?'안녕! 잘 지냈어?':/뭐해/.test(text)?'그냥 쉬고 있어. 너는?':/잘자/.test(text)?'잘 자! 내일 연락해.':'응, 알겠어!';history[recipient].push({text:reply,me:false,time:new Date().toLocaleTimeString('ko-KR',{hour:'numeric',minute:'2-digit'})});save();if(current===recipient)renderChat()},800)};
-function back(){if(current){current=null;showList()}else goHome()}function goHome(){current=null;document.getElementById('view').classList.remove('show');document.getElementById('chat').classList.remove('open');document.getElementById('phone').classList.remove('locked')}function unlock(){
+
+let settingsSubpage='';
+const settingsDefaults={wifi:true,bluetooth:true,airplane:false,cellular:true,notifications:true,sounds:true,dark:false,brightness:85,lowPower:false};
+let settings={...settingsDefaults};
+try{settings={...settingsDefaults,...JSON.parse(localStorage.getItem('iphone-settings-v1')||'{}')}}catch(e){}
+function saveSettings(){try{localStorage.setItem('iphone-settings-v1',JSON.stringify(settings))}catch(e){}}
+function settingsSwitch(key){return `<button type="button" class="settings-switch ${settings[key]?'on':''}" role="switch" aria-label="${key}" aria-checked="${!!settings[key]}" onclick="event.stopPropagation();toggleSetting('${key}')"></button>`}
+function settingsRow(icon,color,label,detail,action){return `<div class="settings-row" role="button" tabindex="0" onclick="${action}" onkeydown="if(event.key==='Enter')this.click()"><span class="sicon" style="background:${color}">${icon}</span><span class="stext">${label}</span><span class="sdetail">${detail||''}</span><span class="schevron">›</span></div>`}
+function toggleSetting(key){settings[key]=!settings[key];if(key==='airplane'&&settings.airplane){settings.wifi=false;settings.bluetooth=false;settings.cellular=false}if((key==='wifi'||key==='bluetooth'||key==='cellular')&&settings[key])settings.airplane=false;saveSettings();applySettings();showSettings(settingsSubpage)}
+function applySettings(){
+ document.getElementById('phone').style.setProperty('--sim-brightness',String(.3+Number(settings.brightness)/100*.7));
+ document.getElementById('view').classList.toggle('settings-dark',!!settings.dark);
+}
+function settingsOpen(page){settingsSubpage=page;showSettings(page)}
+function showSettings(page=''){
+ settingsSubpage=page;
+ document.getElementById('chat').classList.remove('open');
+ document.getElementById('back').textContent=page?'‹ 설정':'‹ 홈';
+ document.getElementById('viewtitle').textContent=page||'설정';
+ const list=document.getElementById('list');list.style.height='calc(100% - 48px)';
+ let html='';
+ if(!page){
+ html=`<div class="settings-page"><div class="settings-title">설정</div>
+ <div class="settings-group">${settingsRow('사','#8e8e93','나의 iPhone','Apple 계정','settingsOpen("Apple 계정")')}</div>
+ <div class="settings-group">
+ ${settingsRow('✈','#ff9500','에어플레인 모드',settings.airplane?'켬':'끔','settingsOpen("에어플레인 모드")')}
+ ${settingsRow('◉','#007aff','Wi-Fi',settings.wifi?'연결됨':'끔','settingsOpen("Wi-Fi")')}
+ ${settingsRow('ᛒ','#007aff','Bluetooth',settings.bluetooth?'켬':'끔','settingsOpen("Bluetooth")')}
+ ${settingsRow('▥','#34c759','셀룰러',settings.cellular?'켬':'끔','settingsOpen("셀룰러")')}
+ </div><div class="settings-group">
+ ${settingsRow('◉','#ff3b30','알림',settings.notifications?'켬':'끔','settingsOpen("알림")')}
+ ${settingsRow('♫','#ff2d55','사운드 및 햅틱',settings.sounds?'켬':'끔','settingsOpen("사운드 및 햅틱")')}
+ ${settingsRow('☼','#007aff','디스플레이 및 밝기','','settingsOpen("디스플레이 및 밝기")')}
+ ${settingsRow('▣','#8e8e93','배터리',settings.lowPower?'저전력 모드':'','settingsOpen("배터리")')}
+ </div><div class="settings-group">${settingsRow('⚙','#8e8e93','일반','','settingsOpen("일반")')}</div>
+ <div class="settings-caption">이 설정은 웹 시뮬레이터 안에서만 작동합니다. 실제 휴대폰의 Wi-Fi나 Bluetooth를 변경하지 않습니다.</div></div>`;
+ }else{
+ const entries={
+ '에어플레인 모드':['airplane','에어플레인 모드','✈','#ff9500'],
+ 'Wi-Fi':['wifi','Wi-Fi','◉','#007aff'],
+ 'Bluetooth':['bluetooth','Bluetooth','ᛒ','#007aff'],
+ '셀룰러':['cellular','셀룰러','▥','#34c759'],
+ '알림':['notifications','알림 허용','◉','#ff3b30'],
+ '사운드 및 햅틱':['sounds','사운드','♫','#ff2d55'],
+ '배터리':['lowPower','저전력 모드','▣','#e1ac00']
+ };
+ if(entries[page]){
+ const [key,label,icon,color]=entries[page];
+ html=`<div class="settings-page"><div class="settings-subtitle">${page}</div><div class="settings-group"><div class="settings-row"><span class="sicon" style="background:${color}">${icon}</span><span class="stext">${label}</span>${settingsSwitch(key)}</div></div><div class="settings-caption">변경한 값은 이 브라우저에 저장됩니다. 실제 기기 설정에는 영향을 주지 않습니다.</div></div>`;
+ }else if(page==='디스플레이 및 밝기'){
+ html=`<div class="settings-page"><div class="settings-subtitle">화면 스타일</div><div class="settings-group"><div class="settings-row"><span class="sicon" style="background:#555">◐</span><span class="stext">다크 모드</span>${settingsSwitch('dark')}</div></div><div class="settings-subtitle">밝기</div><div class="settings-group" style="padding:18px"><div style="display:flex;justify-content:space-between;font-size:14px"><span>☼</span><span id="brightnessValue">${settings.brightness}%</span><span>☀</span></div><input class="settings-slider" type="range" min="10" max="100" value="${settings.brightness}" aria-label="화면 밝기" oninput="settings.brightness=+this.value;document.getElementById('brightnessValue').textContent=this.value+'%';applySettings();saveSettings()"></div><div class="settings-caption">시뮬레이터 화면 밝기만 조절합니다.</div></div>`;
+ }else if(page==='일반'){
+ html=`<div class="settings-page"><div class="settings-group">${settingsRow('ⓘ','#8e8e93','정보','','settingsOpen("정보")')}</div></div>`;
+ }else if(page==='정보'){
+ html=`<div class="settings-page"><div class="settings-group"><div class="settings-row"><span class="stext">이름</span><span class="sdetail">iPhone Simulator</span></div><div class="settings-row"><span class="stext">소프트웨어</span><span class="sdetail">웹 시뮬레이터</span></div></div></div>`;
+ }else{
+ html=`<div class="settings-page"><div class="settings-group"><div class="settings-row"><span class="stext">${page}</span></div></div><div class="settings-caption">실제 Apple 계정 연결 기능은 제공하지 않습니다.</div></div>`;
+ }
+ }
+ list.innerHTML=html;
+ list.scrollTop=0;
+ applySettings();
+}
+applySettings();
+
+function back(){if(settingsSubpage){settingsSubpage='';showSettings();return}if(current){current=null;showList()}else goHome()}function goHome(){settingsSubpage='';current=null;document.getElementById('view').classList.remove('show');document.getElementById('chat').classList.remove('open');document.getElementById('phone').classList.remove('locked')}function unlock(){
  const phone=document.getElementById('phone');
  const lock=document.getElementById('lock');
  if(!phone.classList.contains('locked'))return;

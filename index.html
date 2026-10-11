@@ -13,7 +13,355 @@
 @media(prefers-reduced-motion:reduce){.phone .home,.phone .lock{transition-duration:.01ms}}
 
 /* 설정 앱 전용 디자인 — 기존 홈 화면 스타일은 변경하지 않음 */
+.phone .wallpaper,.phone .home,.phone .view{filter:brightness(v<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090909"><title>iPhone</title><style>
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}body{background:#171717;display:grid;place-items:center;color:white}.device{width:392px;height:812px;padding:6px;border:3px solid #777;border-radius:57px;background:linear-gradient(100deg,#444,#ddd 12%,#555 22%,#111 50%,#999 88%,#333);box-shadow:0 0 0 2px #111,0 25px 70px #0009;position:relative}.phone{height:100%;border:4px solid #080808;border-radius:48px;position:relative;overflow:hidden;background:#9a003a}.wallpaper{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.shade{position:absolute;inset:0;background:linear-gradient(#0002,transparent 35%,#0001);pointer-events:none}.notch{position:absolute;z-index:20;top:0;left:50%;transform:translateX(-50%);width:174px;height:29px;background:#050505;border-radius:0 0 19px 19px}.notch:after{content:'';position:absolute;right:33px;top:9px;width:8px;height:8px;border-radius:50%;background:#111d2a;box-shadow:inset 0 0 2px #345}.status{position:absolute;z-index:19;top:11px;left:29px;right:27px;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:650}.signals{display:flex;gap:5px;align-items:center}.signals svg{width:18px;height:14px}.home{position:absolute;inset:0;padding:66px 24px 0;transition:transform .28s,opacity .28s}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:15px;row-gap:19px}.app{min-width:0;text-align:center;cursor:pointer;user-select:none}.appicon{height:58px;width:58px;margin:0 auto 5px;border-radius:13px;display:grid;place-items:center;overflow:hidden;box-shadow:0 1px 2px #0002;background:white}.appicon svg{width:100%;height:100%}.appname{font-size:11px;white-space:nowrap;text-shadow:0 1px 3px #0008;font-weight:450}.dots{position:absolute;bottom:113px;left:0;right:0;text-align:center;font-size:13px;letter-spacing:4px;color:#fffc}.dock{position:absolute;bottom:22px;left:13px;right:13px;height:87px;border-radius:27px;background:#ffffff48;backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-around;padding:0 8px}.dock .appicon{margin:0;width:60px;height:60px}.dock .appname{display:none}.bar{position:absolute;z-index:30;bottom:7px;left:50%;transform:translateX(-50%);width:132px;height:5px;background:white;border-radius:9px;cursor:pointer}.view{position:absolute;z-index:12;inset:0;background:#f7f7fa;color:#111;display:none;padding-top:49px}.view.show{display:block}.viewheader{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid #ddd;background:#fafafa}.back{border:0;background:none;color:#007aff;font-size:17px;cursor:pointer}.viewtitle{font-size:17px;font-weight:650}.list{height:calc(100% - 100px);overflow:auto}.conversation{display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid #ddd;background:white;cursor:pointer}.avatar{width:48px;height:48px;border-radius:50%;background:#a3a7b1;color:white;display:grid;place-items:center;font-size:21px}.preview{font-size:13px;color:#777;margin-top:4px}.chat{display:none;position:absolute;inset:97px 0 0;background:white}.chat.open{display:flex;flex-direction:column}.messages{flex:1;overflow:auto;padding:18px 15px 12px;display:flex;flex-direction:column;gap:10px}.bubble{padding:10px 14px;border-radius:18px;max-width:79%;font-size:16px;line-height:1.35;overflow-wrap:anywhere}.mine{align-self:flex-end;background:#007aff;color:white;border-bottom-right-radius:5px}.theirs{align-self:flex-start;background:#e9e9eb;color:#111;border-bottom-left-radius:5px}.stamp{font-size:10px;opacity:.7;margin-top:4px}.composer{display:flex;gap:8px;padding:10px 12px 30px;border-top:1px solid #ddd;background:#fafafa}.composer input{flex:1;min-width:0;border:1px solid #d0d0d0;border-radius:22px;padding:10px 13px;font-size:15px;background:white}.composer button{border:0;background:#007aff;color:white;border-radius:50%;width:36px;height:36px;font-size:21px;cursor:pointer}.placeholder{padding:50px 24px;text-align:center;color:#777}.lock{position:absolute;z-index:14;inset:0;display:none;align-items:center;flex-direction:column;padding-top:90px;cursor:pointer}.locktime{font-size:72px;font-weight:250;letter-spacing:-3px}.lockdate{font-size:20px}.lockhint{position:absolute;bottom:55px;font-size:14px}.phone.locked .lock{display:flex}.phone.locked .home{display:none}@media(max-width:600px){body{display:block;background:#000}.device{width:100vw;height:100dvh;border:0;border-radius:0;padding:0;box-shadow:none;background:#000}.phone{border:0;border-radius:0}.notch{top:0}.grid{column-gap:clamp(4px,3vw,16px);row-gap:clamp(9px,2vh,19px)}.home{padding-left:clamp(12px,6vw,26px);padding-right:clamp(12px,6vw,26px)}.appicon{width:min(15vw,61px);height:min(15vw,61px)}.dock .appicon{width:min(15vw,61px);height:min(15vw,61px)}}@media(max-height:720px){.grid{row-gap:9px}.home{padding-top:54px}.appicon{width:52px;height:52px}.dock{height:75px}.dock .appicon{width:53px;height:53px}.dots{bottom:99px}}
+
+/* 잠금 해제 동작만 개선: 기존 디자인은 그대로 유지 */
+.phone .home{transition:transform .62s cubic-bezier(.22,1,.36,1),filter .62s ease,opacity .62s ease}
+.phone.locked .home{display:block;transform:scale(1.045);filter:blur(7px);opacity:.78;pointer-events:none}
+.phone .lock{display:flex;touch-action:none;transform:translateY(-110%);opacity:0;pointer-events:none;transition:transform .62s cubic-bezier(.22,1,.36,1),opacity .5s ease;will-change:transform}
+.phone.locked .lock{display:flex;transform:translateY(0);opacity:1;pointer-events:auto}
+.phone .lock.dragging{transition:none}
+.phone.locked .home.dragging{transition:none}
+.phone .lock:not(.dragging){visibility:visible}
+.phone .lock.unlocked{visibility:hidden;transition:transform .62s cubic-bezier(.22,1,.36,1),opacity .5s ease,visibility 0s linear .62s}
+@media(prefers-reduced-motion:reduce){.phone .home,.phone .lock{transition-duration:.01ms}}
+
+/* 설정 앱 전용 디자인 — 기존 홈 화면 스타일은 변경하지 않음 */
 .phone .wallpaper,.phone .home,.phone .view{filter:brightness(var(--sim-brightness,1))}.phone .home{filter:none}.phone.locked .home{filter:blur(7px)}.settings-dark .settings-page{background:#1c1c1e;color:#fff}.settings-dark .settings-group{background:#2c2c2e}.settings-dark .settings-row{border-color:#444}.settings-dark .settings-row .stext{color:#fff}.settings-page{height:100%;overflow-y:auto;background:#f2f2f7;color:#111;padding:10px 16px 34px}
+.settings-title{font-size:32px;font-weight:750;letter-spacing:-1px;margin:10px 4px 18px}
+.settings-group{background:#fff;border-radius:12px;overflow:hidden;margin:0 0 23px}
+.settings-row{display:flex;align-items:center;gap:12px;min-height:48px;padding:9px 14px;border-bottom:1px solid #e5e5ea;cursor:pointer}
+.settings-row:last-child{border-bottom:0}
+.settings-row .sicon{width:29px;height:29px;flex-shrink:0;border-radius:7px;display:grid;place-items:center;background:#8e8e93;color:white;font-size:17px;font-weight:650}
+.settings-row .stext{flex:1;font-size:15px}
+.settings-row .sdetail{font-size:13px;color:#8e8e93}
+.settings-row .schevron{font-size:22px;color:#c7c7cc;font-weight:300}
+.settings-row.profile{min-height:80px}
+.settings-row.profile .sicon{width:54px;height:54px;border-radius:50%;font-size:23px;background:#b6b8c0}
+.settings-row.profile .stext b{font-size:18px}
+.settings-row.profile .stext small{display:block;color:#8e8e93;font-size:12px;margin-top:4px}
+.settings-switch{position:relative;flex-shrink:0;width:49px;height:30px;border:0;border-radius:20px;background:#e5e5ea;cursor:pointer;transition:background .2s}
+.settings-switch:before{content:'';position:absolute;top:2px;left:2px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0003;transition:transform .2s}
+.settings-switch.on{background:#34c759}
+.settings-switch.on:before{transform:translateX(19px)}
+.settings-caption{font-size:12px;color:#777;margin:-13px 8px 22px;line-height:1.5}
+.settings-slider{width:100%;accent-color:#007aff}
+.settings-subtitle{font-size:13px;color:#8e8e93;margin:8px 8px 7px}
+.settings-page .settings-row:focus-visible,.settings-switch:focus-visible{outline:2px solid #007aff;outline-offset:-2px}
+
+/* 카카오톡만 추가: 기존 홈/배경/아이콘 배치의 스타일은 그대로 둠 */
+.grid{max-height:calc(100% - 160px);overflow-y:auto;scrollbar-width:none}.grid::-webkit-scrollbar{display:none}
+.kakao-screen{position:absolute;inset:0;z-index:15;display:none;flex-direction:column;background:#fff;color:#222;padding-top:43px;font-size:15px}
+.kakao-screen.open{display:flex}
+.kakao-top{height:55px;display:flex;align-items:center;gap:12px;padding:0 18px;background:#fff;flex-shrink:0}
+.kakao-top strong{font-size:22px;flex:1}.kakao-back,.kakao-home{background:none;border:0;color:#222;font-size:25px;cursor:pointer}.kakao-home{font-size:14px}
+.kakao-content{flex:1;overflow-y:auto;min-height:0;background:#fff}
+.kakao-row{display:flex;align-items:center;gap:13px;padding:12px 20px;min-height:68px;cursor:pointer;border-bottom:1px solid #f5f5f5}
+.kakao-avatar{width:46px;height:46px;flex-shrink:0;border-radius:17px;background:#f6e7d4;display:grid;place-items:center;color:#634e3a;font-size:21px;font-weight:700}
+.kakao-row-main{flex:1;min-width:0}.kakao-row-main b{font-size:15px}.kakao-row-main p{font-size:12px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:5px 0 0}
+.kakao-muted{color:#999;font-size:12px}.kakao-tabs{height:69px;background:#f9f9f9;border-top:1px solid #eee;display:flex;justify-content:space-around;align-items:center;padding-bottom:12px;flex-shrink:0}
+.kakao-tabs button{background:none;border:0;color:#555;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:24px;cursor:pointer}.kakao-tabs small{font-size:11px}
+.kakao-chat{background:#b2c7d9;padding:15px;display:flex;flex-direction:column;gap:12px;min-height:100%}
+.kakao-bubble{max-width:80%;padding:10px 12px;border-radius:10px;line-height:1.4;word-break:break-word;font-size:14px}
+.kakao-bubble.me{background:#fee500;align-self:flex-end}.kakao-bubble.them{background:white;align-self:flex-start}
+.kakao-bubble time{display:block;font-size:10px;color:#888;margin-top:4px}
+.kakao-compose{display:flex;gap:8px;padding:10px 12px 23px;background:white;flex-shrink:0}.kakao-compose input{flex:1;min-width:0;border:1px solid #eee;background:#f7f7f7;border-radius:8px;padding:11px;font-size:15px}.kakao-compose button{background:#fee500;border:0;border-radius:8px;padding:0 15px;font-size:14px;cursor:pointer}
+.kakao-empty{padding:35px 20px;color:#888;text-align:center}
+
+/* 달력 및 사진 앱: 기존 홈 화면과 다른 앱의 디자인은 유지 */
+.extra-screen{position:absolute;inset:0;z-index:16;display:none;flex-direction:column;background:#f7f7fa;color:#151515;padding-top:45px}
+.extra-screen.open{display:flex}
+.extra-header{height:52px;flex-shrink:0;display:flex;align-items:center;gap:12px;padding:0 16px;border-bottom:1px solid #e6e6eb;background:#fff}
+.extra-header strong{font-size:19px;flex:1;text-align:center}
+.extra-header button,.extra-action{border:0;background:none;color:#007aff;font-size:16px;cursor:pointer}
+.extra-body{flex:1;min-height:0;overflow-y:auto;padding:15px 16px 35px}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin:3px 0 15px}
+.cal-nav strong{font-size:26px}.cal-nav button{background:none;border:0;color:#e53b40;font-size:25px;cursor:pointer;padding:4px 12px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.cal-weekday{font-size:12px;color:#92929a;padding:9px 0}
+.cal-day{position:relative;border:0;background:none;min-height:43px;border-radius:50%;font-size:15px;cursor:pointer;color:#161616}
+.cal-day.other{color:#c0c0c8}.cal-day.today{color:#e34a4f;font-weight:700}.cal-day.selected{background:#ee424b;color:#fff}
+.cal-day.has-event:after{content:'';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:#e43b45;border-radius:50%}.cal-day.selected.has-event:after{background:white}
+.cal-events{margin-top:20px;background:#fff;border-radius:13px;padding:14px}.cal-events h3{font-size:16px;margin:0 0 12px}
+.cal-event{padding:11px 0;border-top:1px solid #ededf0;display:flex;gap:10px;align-items:center}
+.cal-event span{flex:1;overflow-wrap:anywhere}.cal-event button{background:none;border:0;color:#e33;font-size:13px;cursor:pointer}
+.cal-form{display:flex;gap:8px;margin-top:13px}.cal-form input{min-width:0;flex:1;border:1px solid #ddd;border-radius:9px;padding:11px;font-size:14px}.cal-form button{border:0;background:#ee424b;color:#fff;border-radius:9px;padding:0 14px}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:15px}
+.photo-thumb{aspect-ratio:1;overflow:hidden;padding:0;border:0;background:#e5e5e8;cursor:pointer}.photo-thumb img{width:100%;height:100%;object-fit:cover}
+.photo-viewer{position:absolute;inset:0;z-index:2;background:#090909;display:none;flex-direction:column}.photo-viewer.open{display:flex}
+.photo-viewer-top{padding:54px 17px 13px;display:flex;justify-content:space-between}.photo-viewer-top button{border:0;background:none;color:white;font-size:16px}
+.photo-viewer img{flex:1;min-height:0;width:100%;object-fit:contain}.photo-viewer-bottom{padding:18px 18px 32px;display:flex;justify-content:space-between;color:#aaa;font-size:12px}
+.photo-viewer-bottom button{border:0;background:none;color:#ff6b6b;font-size:15px}
+
+.trio-screen{position:absolute;inset:0;z-index:17;display:none;flex-direction:column;padding-top:46px;background:#f7f7fa;color:#18181b}
+.trio-screen.open{display:flex}
+.trio-head{height:50px;flex-shrink:0;background:#fff;border-bottom:1px solid #e8e8ed;display:flex;align-items:center;justify-content:space-between;padding:0 17px}
+.trio-head strong{font-size:19px}.trio-head button{border:0;background:none;color:#007aff;font-size:16px;cursor:pointer}
+.trio-body{flex:1;overflow:auto;min-height:0;padding:20px}
+.music-cover{width:190px;height:190px;border-radius:24px;background:linear-gradient(145deg,#fc5b76,#7c32c5);box-shadow:0 12px 25px #0002;display:grid;place-items:center;color:#fff;font-size:75px;margin:12px auto 22px}
+.music-controls{display:flex;align-items:center;justify-content:center;gap:25px;margin:25px 0}
+.music-controls button{background:none;border:0;font-size:30px;cursor:pointer;color:#161616}.music-controls .music-play{font-size:38px;color:#ed3557}
+.music-track{padding:13px 16px;background:#fff;border-radius:12px;margin:9px 0;cursor:pointer;display:flex;gap:12px;align-items:center}.music-track.selected{outline:2px solid #ed3557}
+.music-progress{width:100%;accent-color:#ed3557}
+.phone-number{text-align:center;font-size:30px;min-height:55px;letter-spacing:2px;margin:15px 0}
+.dial-grid{display:grid;grid-template-columns:repeat(3,75px);justify-content:center;gap:13px}
+.dial-grid button{height:65px;border:0;border-radius:50%;background:#e5e5e9;color:#111;font-size:28px;cursor:pointer}
+.call-button{width:68px;height:68px;background:#34c759;color:white;border:0;border-radius:50%;font-size:29px;display:block;margin:19px auto;cursor:pointer}
+.call-status{text-align:center;margin:25px 0;font-size:17px}
+.safari-address{display:flex;gap:8px;padding:12px;background:#fff;border-bottom:1px solid #ddd}
+.safari-address input{min-width:0;flex:1;background:#f0f0f4;border:0;border-radius:12px;padding:12px;font-size:14px}
+.safari-address button{border:0;background:#007aff;color:white;border-radius:10px;padding:0 14px}
+.safari-bookmark{padding:14px;background:#fff;border-radius:12px;margin:10px 0;cursor:pointer}
+.safari-frame{flex:1;min-height:0;border:0;background:white;width:100%}
+.safari-note{font-size:12px;color:#777;padding:8px 12px;background:#fff}
+</style></head><body><div class="device"><main class="phone locked" id="phone"><svg class="wallpaper" viewBox="0 0 380 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#70001c"/><stop offset=".45" stop-color="#d40925"/><stop offset="1" stop-color="#70002e"/></linearGradient><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff7927"/><stop offset=".6" stop-color="#f12a39"/><stop offset="1" stop-color="#b70043"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6294d"/><stop offset=".55" stop-color="#a00042"/><stop offset="1" stop-color="#460038"/></linearGradient><linearGradient id="c" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f72c64"/><stop offset=".5" stop-color="#f74a7a"/><stop offset="1" stop-color="#8a003b"/></linearGradient></defs><rect width="380" height="800" fill="url(#bg)"/><path d="M-70 55 C100 50 120 230 390 300 L410 590 C190 600 100 465 -50 320Z" fill="url(#a)"/><path d="M-80 310 C120 440 195 400 420 490 L420 720 C240 595 120 660 -50 540Z" fill="url(#b)"/><path d="M-70 720 C95 590 230 635 410 575 L410 830 L-70 830Z" fill="url(#c)"/><path d="M-30 760 C120 640 205 670 405 610" stroke="#ff7892" stroke-width="4" opacity=".45" fill="none"/></svg><div class="shade"></div><div class="notch"></div><div class="status"><span id="time">9:41</span><span class="signals"><svg viewBox="0 0 20 15"><path fill="white" d="M0 12h3v3H0zm5-3h3v6H5zm5-4h3v10h-3zm5-5h3v15h-3z"/></svg><svg viewBox="0 0 20 15"><path fill="white" d="M1 4Q10-3 19 4L10 14Z"/></svg><svg viewBox="0 0 25 14"><rect x="1" y="1" width="20" height="12" rx="3" stroke="white" stroke-width="1.5" fill="none"/><rect x="3.5" y="3.5" width="14" height="7" rx="1" fill="white"/><rect x="22" y="5" width="2" height="4" rx="1" fill="white"/></svg></span></div><section class="home" id="home"><div class="grid" id="apps"></div><div class="dots">● ● ○</div><div class="dock" id="dock"></div></section><section class="lock" id="lock"><div class="lockdate" id="date"></div><div class="locktime" id="bigtime"></div><div class="lockhint">위로 밀거나 화면을 눌러 잠금 해제</div></section><section class="view" id="view"><div class="viewheader"><button class="back" id="back" onclick="back()">‹ 홈</button><span class="viewtitle" id="viewtitle">메시지</span><span style="width:35px"></span></div><div class="list" id="list"></div><div class="chat" id="chat"><div class="messages" id="messages"></div><form class="composer" id="form"><input id="input" placeholder="iMessage" autocomplete="off" aria-label="메시지 입력"><button type="submit" aria-label="전송">↑</button></form></div></section><section class="kakao-screen" id="kakaoScreen" aria-label="카카오톡">
+ <div class="kakao-top"><button type="button" class="kakao-back" onclick="kakaoBack()">‹</button><strong id="kakaoTitle">친구</strong><button type="button" class="kakao-home" onclick="goHome()">홈</button></div>
+ <div class="kakao-content" id="kakaoContent"></div>
+ <form class="kakao-compose" id="kakaoForm" style="display:none"><input id="kakaoInput" placeholder="메시지 입력" autocomplete="off" aria-label="카카오톡 메시지 입력"><button type="submit">전송</button></form>
+ <nav class="kakao-tabs" id="kakaoTabs"><button type="button" onclick="kakaoTab('friends')">♙<small>친구</small></button><button type="button" onclick="kakaoTab('chats')">▤<small>채팅</small></button><button type="button" onclick="kakaoTab('more')">•••<small>더보기</small></button></nav>
+ </section>
+<section class="extra-screen" id="calendarScreen" aria-label="캘린더">
+ <div class="extra-header"><button onclick="goHome()">‹ 홈</button><strong>캘린더</strong><button onclick="calendarToday()">오늘</button></div>
+ <div class="extra-body"><div class="cal-nav"><strong id="calendarMonth"></strong><div><button onclick="calendarMove(-1)" aria-label="이전 달">‹</button><button onclick="calendarMove(1)" aria-label="다음 달">›</button></div></div>
+ <div class="cal-grid" id="calendarGrid"></div><div class="cal-events"><h3 id="calendarSelected"></h3><div id="calendarEvents"></div>
+ <form class="cal-form" id="calendarForm"><input id="calendarInput" placeholder="새 일정 입력" maxlength="100" required aria-label="일정 제목"><button type="submit">추가</button></form></div></div>
+</section>
+<section class="extra-screen" id="photosScreen" aria-label="사진">
+ <div class="extra-header"><button onclick="goHome()">‹ 홈</button><strong>사진</strong><label class="extra-action" for="photoUpload">+ 추가</label><input id="photoUpload" type="file" accept="image/*" multiple style="display:none"></div>
+ <div class="extra-body"><div id="photoCount" style="font-size:25px;font-weight:700;margin-bottom:7px">나의 사진</div><div id="photoHint" style="color:#777;font-size:13px"></div><div class="photo-grid" id="photoGrid"></div></div>
+ <div class="photo-viewer" id="photoViewer"><div class="photo-viewer-top"><button onclick="closePhoto()">‹ 사진</button><span style="color:white">사진 보기</span></div><img id="photoLarge" alt="선택한 사진"><div class="photo-viewer-bottom"><span id="photoDate"></span><button onclick="deletePhoto()">사진 삭제</button></div></div>
+</section>
+
+<section class="trio-screen" id="musicScreen" aria-label="음악"><div class="trio-head"><button onclick="goHome()">‹ 홈</button><strong>음악</strong><span style="width:35px"></span></div><div class="trio-body">
+<div class="music-cover">♫</div><div style="text-align:center"><strong id="musicTitle" style="font-size:22px">햇살 산책</strong><div id="musicArtist" style="color:#888;margin-top:6px">시뮬레이터 멜로디</div></div>
+<div class="music-controls"><button onclick="musicSkip(-1)" aria-label="이전 곡">⏮</button><button class="music-play" id="musicPlay" onclick="musicToggle()" aria-label="재생">▶</button><button onclick="musicSkip(1)" aria-label="다음 곡">⏭</button></div>
+<input class="music-progress" id="musicVolume" type="range" min="0" max="100" value="55" aria-label="볼륨">
+<div style="color:#888;font-size:12px;margin:12px 0 20px">볼륨 · 아래 목록에서 곡을 선택하세요</div><div id="musicTracks"></div>
+<div style="font-size:12px;color:#999;margin-top:16px">실제 음원 대신 브라우저에서 만들어 내는 짧은 멜로디입니다.</div></div></section>
+<section class="trio-screen" id="phoneScreen" aria-label="전화"><div class="trio-head"><button onclick="goHome()">‹ 홈</button><strong>전화</strong><button onclick="phoneContacts()">연락처</button></div>
+<div class="trio-body" id="phoneBody"><div class="phone-number" id="dialNumber"></div><div class="dial-grid" id="dialGrid"></div><button class="call-button" onclick="startFakeCall()" aria-label="전화 걸기">☎</button><p style="text-align:center;color:#999;font-size:12px">실제 전화가 아닌 통화 시뮬레이션입니다.</p></div></section>
+
+<div class="bar" onclick="goHome()"></div></main></div><script>
+const svg=(body,bg='#fff')=>`<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="13" fill="${bg}"/>${body}</svg>`;
+const icons={
+FaceTime:svg('<rect x="10" y="17" width="29" height="26" rx="7" fill="white"/><path d="M40 23 51 16v28L40 37Z" fill="white"/>','#22cb52'),
+Calendar:svg('<rect x="0" y="0" width="60" height="60" rx="13" fill="white"/><text x="30" y="16" font-size="10" font-weight="700" fill="#f33" text-anchor="middle">일요일</text><text x="30" y="47" font-size="35" fill="#111" text-anchor="middle">11</text>'),
+Photos:svg(Array.from({length:8},(_,i)=>`<ellipse cx="30" cy="21" rx="7.3" ry="15" fill="${['#f94b6b','#ff9c36','#ffdd43','#6dc955','#36c9b9','#3d9be9','#815be9','#d85dc7'][i]}" opacity=".88" transform="rotate(${i*45} 30 30)"/>`).join('')+'<circle cx="30" cy="30" r="5" fill="#fff7"/>'),
+Camera:svg('<rect x="8" y="19" width="44" height="29" rx="6" fill="#333"/><path d="M18 19 22 14h16l4 5" fill="#333"/><circle cx="30" cy="33" r="13" fill="#626772" stroke="#bbb" stroke-width="2"/><circle cx="30" cy="33" r="9" fill="#171a24"/><circle cx="30" cy="33" r="5" fill="#33425d"/>','#b8bac0'),
+Mail:svg('<rect x="9" y="17" width="42" height="28" rx="4" fill="white"/><path d="m10 20 20 16 20-16" fill="none" stroke="#1685ff" stroke-width="2"/>','#1685ff'),
+Clock:svg('<circle cx="30" cy="30" r="25" fill="#fff"/><circle cx="30" cy="30" r="22" fill="none" stroke="#111" stroke-width="1"/>'+Array.from({length:12},(_,i)=>`<path d="M30 10v4" stroke="#111" stroke-width="1.5" transform="rotate(${i*30} 30 30)"/>`).join('')+'<path d="M30 30V17M30 30l10 7" stroke="#111" stroke-width="2" stroke-linecap="round"/>','#151515'),
+Maps:svg('<path d="M0 0h60v60H0z" fill="#e9ece8"/><path d="M-10 43 65 10M17-5l17 70" stroke="#91c880" stroke-width="13"/><path d="M-10 43 65 10M17-5l17 70" stroke="white" stroke-width="7"/><path d="M30 16c-13 0-13 17 0 30 13-13 13-30 0-30" fill="#f04a46"/><circle cx="30" cy="25" r="5" fill="white"/>'),
+Weather:svg('<circle cx="39" cy="20" r="13" fill="#ffcf2f"/><path d="M13 45h33a10 10 0 0 0-5-19 15 15 0 0 0-28 5A7 7 0 0 0 13 45" fill="white"/>','#1598ef'),
+Reminders:svg('<path d="M0 0h60v60H0z" fill="white"/>'+[17,30,43].map((y,i)=>`<circle cx="13" cy="${y}" r="4" fill="${['#158bfa','#ff9d31','#fa5656'][i]}"/><path d="M23 ${y}h27" stroke="#d0d0d0" stroke-width="2"/>`).join('')),
+Notes:svg('<rect width="60" height="60" fill="white"/><path d="M0 0h60v15H0" fill="#ffd441"/><path d="M8 25h44M8 34h44M8 43h44" stroke="#ddd" stroke-width="1.5"/>'),
+Stocks:svg('<path d="M0 0h60v60H0z" fill="#151515"/><path d="M0 15h60M0 30h60M0 45h60M15 0v60M30 0v60M45 0v60" stroke="#333"/><path d="m0 43 10-8 9 7 8-19 8 9 8-17 8 5 9-14" fill="none" stroke="#4ccf91" stroke-width="2"/>'),
+News:svg('<path d="M11 10h38v40H11z" fill="white"/><path d="M15 44V16h7l18 20V16h6v28h-7L21 24v20z" fill="#ed2d43"/>'),
+Books:svg('<path d="M8 17q11-7 22 1v31Q19 42 8 48zm44 0q-11-7-22 1v31q11-7 22-1z" fill="white"/>','#ff8a00'),
+'App Store':svg('<path d="m22 11 22 38M38 11 16 49M13 39h34" stroke="white" stroke-width="6" stroke-linecap="round"/>','#1689ed'),
+Podcasts:svg('<circle cx="30" cy="25" r="18" stroke="white" stroke-width="3" fill="none"/><circle cx="30" cy="25" r="11" stroke="white" stroke-width="3" fill="none"/><circle cx="30" cy="24" r="4" fill="white"/><path d="M24 34h12l-3 18h-6z" fill="white"/>','#ad3be0'),
+TV:svg('<text x="30" y="41" font-size="27" font-weight="700" text-anchor="middle" fill="white">tv</text>','#111'),
+Health:svg('<path d="M30 48C7 34 6 17 18 14q8-2 12 7 6-10 15-7c13 7 5 24-15 34" fill="#ff3d69"/>'),
+Home:svg('<path d="m8 29 22-19 22 19h-6v22H14V29z" fill="#ffa82c"/><path d="m18 29 12-11 12 11v19H18z" fill="#fff5dc"/><rect x="26" y="35" width="8" height="13" fill="#d79d56"/>'),
+Settings:svg('<circle cx="30" cy="30" r="22" fill="#777" stroke="#ddd" stroke-width="5"/><path d="M30 9v10M30 41v10M9 30h10M41 30h10M15 15l7 7M38 38l7 7M45 15l-7 7M22 38l-7 7" stroke="#eee" stroke-width="7"/><circle cx="30" cy="30" r="10" fill="#777" stroke="#ddd" stroke-width="4"/>','#a7a8ac'),
+ Kakao:svg('<path d="M30 10C15 10 6 19 6 30c0 8 5 14 13 18l-3 9 13-7h1c15 0 24-9 24-20S45 10 30 10z" fill="#3c1e1e"/>','#fee500'),
+Phone:svg('<path d="M19 11q-8 2-7 12c2 13 16 27 29 28 7 1 12-6 9-10l-10-7-6 5c-6-3-10-8-13-14l5-5-7-9z" fill="white"/>','#23ca50'),
+Safari:svg('<circle cx="30" cy="30" r="24" fill="#fff"/><circle cx="30" cy="30" r="21" fill="#159eff"/><circle cx="30" cy="30" r="17" fill="none" stroke="#fff" stroke-width="1.3"/><path d="m38 18-13 16-3 11 14-16z" fill="white"/><path d="m38 18-8 13-5 3z" fill="#f44"/>'),
+Messages:svg('<ellipse cx="30" cy="27" rx="23" ry="18" fill="white"/><path d="m17 39-1 10 13-6" fill="white"/>','#20cb4d'),
+Music:svg('<path d="M27 16 44 12v28a8 8 0 1 1-5-7V22l-12 3v20a8 8 0 1 1-5-7V19z" fill="#f53b65"/>')};
+const order=['FaceTime','Calendar','Photos','Camera','Mail','Clock','Maps','Weather','Reminders','Notes','Stocks','News','Books','App Store','Podcasts','TV','Health','Home','Kakao','Settings'];const ko={'Calendar':'캘린더','Photos':'사진','Camera':'카메라','Clock':'시계','Maps':'지도','Weather':'날씨','Reminders':'미리 알림','Notes':'메모','Stocks':'주식','News':'뉴스','Books':'도서','App Store':'App Store','Podcasts':'팟캐스트','Health':'건강','Home':'홈','Settings':'설정','Phone':'전화','Messages':'메시지','Music':'음악','Kakao':'카카오톡'};
+function app(name){const el=document.createElement('div');el.className='app';el.innerHTML=`<div class="appicon">${icons[name]}</div><div class="appname">${ko[name]||name}</div>`;el.onclick=()=>openApp(name);return el}order.forEach(n=>document.getElementById('apps').append(app(n)));['Phone','Messages','Music'].forEach(n=>document.getElementById('dock').append(app(n)));
+function tick(){const d=new Date(),t=`${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;document.getElementById('time').textContent=t;document.getElementById('bigtime').textContent=t;document.getElementById('date').textContent=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'long'}).format(d)}tick();setInterval(tick,10000);
+let current=null;const contacts=['민지','지훈','엄마'];let history={};try{history=JSON.parse(localStorage.getItem('iphone-chat-v3')||'{}')}catch{};function save(){localStorage.setItem('iphone-chat-v3',JSON.stringify(history))}function openApp(name){if(name==='Music'){openMusic();return}if(name==='Phone'){openPhone();return}if(name==='Kakao'){openKakao();return}if(name==='Calendar'){openCalendar();return}if(name==='Photos'){openPhotos();return}settingsSubpage='';document.getElementById('list').style.height='';document.getElementById('view').classList.add('show');document.getElementById('viewtitle').textContent=ko[name]||name;document.getElementById('chat').classList.remove('open');document.getElementById('back').textContent='‹ 홈';current=null;if(name==='Messages')showList();else if(name==='Settings')showSettings();else document.getElementById('list').innerHTML=`<div class="placeholder">${ko[name]||name} 앱<br><br>이 앱의 기능은 다음 단계에서 추가할 수 있어요.</div>`}
+function showList(){document.getElementById('viewtitle').textContent='메시지';document.getElementById('chat').classList.remove('open');document.getElementById('back').textContent='‹ 홈';document.getElementById('list').innerHTML=contacts.map((n,i)=>`<div class="conversation" data-i="${i}"><div class="avatar">${n[0]}</div><div><b>${n}</b><div class="preview">${(history[n]||[]).at(-1)?.text||'대화를 시작해 보세요'}</div></div></div>`).join('');document.querySelectorAll('.conversation').forEach(el=>el.onclick=()=>openChat(contacts[+el.dataset.i]))}
+function openChat(name){current=name;document.getElementById('chat').classList.add('open');document.getElementById('viewtitle').textContent=name;document.getElementById('back').textContent='‹ 메시지';renderChat()}function renderChat(){const area=document.getElementById('messages');area.replaceChildren();(history[current]||[]).forEach(m=>{const el=document.createElement('div');el.className='bubble '+(m.me?'mine':'theirs');const t=document.createElement('div');t.textContent=m.text;const stamp=document.createElement('div');stamp.className='stamp';stamp.textContent=m.time;el.append(t,stamp);area.append(el)});area.scrollTop=area.scrollHeight}function addMessage(text,me){if(!current)return;history[current]??=[];history[current].push({text,me,time:new Date().toLocaleTimeString('ko-KR',{hour:'numeric',minute:'2-digit'})});save();renderChat()}
+document.getElementById('form').onsubmit=e=>{e.preventDefault();const input=document.getElementById('input');const text=input.value.trim();if(!text||!current)return;const recipient=current;addMessage(text,true);input.value='';setTimeout(()=>{if(!history[recipient])history[recipient]=[];const reply=/안녕|ㅎㅇ/.test(text)?'안녕! 잘 지냈어?':/뭐해/.test(text)?'그냥 쉬고 있어. 너는?':/잘자/.test(text)?'잘 자! 내일 연락해.':'응, 알겠어!';history[recipient].push({text:reply,me:false,time:new Date().toLocaleTimeString('ko-KR',{hour:'numeric',minute:'2-digit'})});save();if(current===recipient)renderChat()},800)};
+
+let settingsSubpage='';
+const settingsDefaults={wifi:true,bluetooth:true,airplane:false,cellular:true,notifications:true,sounds:true,dark:false,brightness:85,lowPower:false};
+let settings={...settingsDefaults};
+try{settings={...settingsDefaults,...JSON.parse(localStorage.getItem('iphone-settings-v1')||'{}')}}catch(e){}
+function saveSettings(){try{localStorage.setItem('iphone-settings-v1',JSON.stringify(settings))}catch(e){}}
+function settingsSwitch(key){return `<button type="button" class="settings-switch ${settings[key]?'on':''}" role="switch" aria-label="${key}" aria-checked="${!!settings[key]}" onclick="event.stopPropagation();toggleSetting('${key}')"></button>`}
+function settingsRow(icon,color,label,detail,action){return `<div class="settings-row" role="button" tabindex="0" onclick="${action}" onkeydown="if(event.key==='Enter')this.click()"><span class="sicon" style="background:${color}">${icon}</span><span class="stext">${label}</span><span class="sdetail">${detail||''}</span><span class="schevron">›</span></div>`}
+function toggleSetting(key){settings[key]=!settings[key];if(key==='airplane'&&settings.airplane){settings.wifi=false;settings.bluetooth=false;settings.cellular=false}if((key==='wifi'||key==='bluetooth'||key==='cellular')&&settings[key])settings.airplane=false;saveSettings();applySettings();showSettings(settingsSubpage)}
+function applySettings(){
+ document.getElementById('phone').style.setProperty('--sim-brightness',String(.3+Number(settings.brightness)/100*.7));
+ document.getElementById('view').classList.toggle('settings-dark',!!settings.dark);
+}
+function settingsOpen(page){settingsSubpage=page;showSettings(page)}
+function showSettings(page=''){
+ settingsSubpage=page;
+ document.getElementById('chat').classList.remove('open');
+ document.getElementById('back').textContent=page?'‹ 설정':'‹ 홈';
+ document.getElementById('viewtitle').textContent=page||'설정';
+ const list=document.getElementById('list');list.style.height='calc(100% - 48px)';
+ let html='';
+ if(!page){
+ html=`<div class="settings-page"><div class="settings-title">설정</div>
+ <div class="settings-group">${settingsRow('사','#8e8e93','나의 iPhone','Apple 계정','settingsOpen("Apple 계정")')}</div>
+ <div class="settings-group">
+ ${settingsRow('✈','#ff9500','에어플레인 모드',settings.airplane?'켬':'끔','settingsOpen("에어플레인 모드")')}
+ ${settingsRow('◉','#007aff','Wi-Fi',settings.wifi?'연결됨':'끔','settingsOpen("Wi-Fi")')}
+ ${settingsRow('ᛒ','#007aff','Bluetooth',settings.bluetooth?'켬':'끔','settingsOpen("Bluetooth")')}
+ ${settingsRow('▥','#34c759','셀룰러',settings.cellular?'켬':'끔','settingsOpen("셀룰러")')}
+ </div><div class="settings-group">
+ ${settingsRow('◉','#ff3b30','알림',settings.notifications?'켬':'끔','settingsOpen("알림")')}
+ ${settingsRow('♫','#ff2d55','사운드 및 햅틱',settings.sounds?'켬':'끔','settingsOpen("사운드 및 햅틱")')}
+ ${settingsRow('☼','#007aff','디스플레이 및 밝기','','settingsOpen("디스플레이 및 밝기")')}
+ ${settingsRow('▣','#8e8e93','배터리',settings.lowPower?'저전력 모드':'','settingsOpen("배터리")')}
+ </div><div class="settings-group">${settingsRow('⚙','#8e8e93','일반','','settingsOpen("일반")')}</div>
+ <div class="settings-caption">이 설정은 웹 시뮬레이터 안에서만 작동합니다. 실제 휴대폰의 Wi-Fi나 Bluetooth를 변경하지 않습니다.</div></div>`;
+ }else{
+ const entries={
+ '에어플레인 모드':['airplane','에어플레인 모드','✈','#ff9500'],
+ 'Wi-Fi':['wifi','Wi-Fi','◉','#007aff'],
+ 'Bluetooth':['bluetooth','Bluetooth','ᛒ','#007aff'],
+ '셀룰러':['cellular','셀룰러','▥','#34c759'],
+ '알림':['notifications','알림 허용','◉','#ff3b30'],
+ '사운드 및 햅틱':['sounds','사운드','♫','#ff2d55'],
+ '배터리':['lowPower','저전력 모드','▣','#e1ac00']
+ };
+ if(entries[page]){
+ const [key,label,icon,color]=entries[page];
+ html=`<div class="settings-page"><div class="settings-subtitle">${page}</div><div class="settings-group"><div class="settings-row"><span class="sicon" style="background:${color}">${icon}</span><span class="stext">${label}</span>${settingsSwitch(key)}</div></div><div class="settings-caption">변경한 값은 이 브라우저에 저장됩니다. 실제 기기 설정에는 영향을 주지 않습니다.</div></div>`;
+ }else if(page==='디스플레이 및 밝기'){
+ html=`<div class="settings-page"><div class="settings-subtitle">화면 스타일</div><div class="settings-group"><div class="settings-row"><span class="sicon" style="background:#555">◐</span><span class="stext">다크 모드</span>${settingsSwitch('dark')}</div></div><div class="settings-subtitle">밝기</div><div class="settings-group" style="padding:18px"><div style="display:flex;justify-content:space-between;font-size:14px"><span>☼</span><span id="brightnessValue">${settings.brightness}%</span><span>☀</span></div><input class="settings-slider" type="range" min="10" max="100" value="${settings.brightness}" aria-label="화면 밝기" oninput="settings.brightness=+this.value;document.getElementById('brightnessValue').textContent=this.value+'%';applySettings();saveSettings()"></div><div class="settings-caption">시뮬레이터 화면 밝기만 조절합니다.</div></div>`;
+ }else if(page==='일반'){
+ html=`<div class="settings-page"><div class="settings-group">${settingsRow('ⓘ','#8e8e93','정보','','settingsOpen("정보")')}</div></div>`;
+ }else if(page==='정보'){
+ html=`<div class="settings-page"><div class="settings-group"><div class="settings-row"><span class="stext">이름</span><span class="sdetail">iPhone Simulator</span></div><div class="settings-row"><span class="stext">소프트웨어</span><span class="sdetail">웹 시뮬레이터</span></div></div></div>`;
+ }else{
+ html=`<div class="settings-page"><div class="settings-group"><div class="settings-row"><span class="stext">${page}</span></div></div><div class="settings-caption">실제 Apple 계정 연결 기능은 제공하지 않습니다.</div></div>`;
+ }
+ }
+ list.innerHTML=html;
+ list.scrollTop=0;
+ applySettings();
+}
+applySettings();
+
+function back(){if(settingsSubpage){settingsSubpage='';showSettings();return}if(current){current=null;showList()}else goHome()}function goHome(){if('speechSynthesis' in window)window.speechSynthesis.cancel();if(callTimer){clearInterval(callTimer);callTimer=null}stopMusic();document.getElementById('musicScreen').classList.remove('open');document.getElementById('phoneScreen').classList.remove('open');document.getElementById('calendarScreen').classList.remove('open');document.getElementById('photosScreen').classList.remove('open');closePhoto();document.getElementById('kakaoScreen').classList.remove('open');kakaoContact=null;settingsSubpage='';current=null;document.getElementById('view').classList.remove('show');document.getElementById('chat').classList.remove('open');document.getElementById('phone').classList.remove('locked')}function unlock(){
+ const phone=document.getElementById('phone');
+ const lock=document.getElementById('lock');
+ if(!phone.classList.contains('locked'))return;
+ lock.classList.remove('dragging');document.getElementById('home').classList.remove('dragging');
+ lock.style.transform='';lock.style.opacity='';
+ phone.classList.remove('locked');
+ lock.classList.add('unlocked');
+}
+// 손가락/마우스 움직임을 따라가는 잠금 해제
+(()=>{
+ const lock=document.getElementById('lock'),home=document.getElementById('home'),phone=document.getElementById('phone');
+ let start=null,dy=0,moved=false;
+ lock.addEventListener('pointerdown',e=>{
+  if(e.target.closest('button'))return;
+  start=e.clientY;dy=0;moved=false;
+  lock.setPointerCapture(e.pointerId);
+  lock.classList.add('dragging');home.classList.add('dragging');
+ });
+ lock.addEventListener('pointermove',e=>{
+  if(start===null)return;
+  dy=Math.min(0,e.clientY-start);
+  if(Math.abs(dy)>6)moved=true;
+  lock.style.transform=`translateY(${dy}px)`;
+  lock.style.opacity=String(Math.max(.15,1+dy/480));
+  home.style.filter=`blur(${Math.max(0,7+dy/30)}px)`;
+  home.style.transform=`scale(${Math.max(1,1.045+dy/1600)})`;
+ });
+ const end=()=>{
+  if(start===null)return;
+  start=null;
+  lock.classList.remove('dragging');home.classList.remove('dragging');
+  home.style.filter='';home.style.transform='';
+  if(dy < -65 || !moved)unlock();
+  else {lock.style.transform='';lock.style.opacity=''}
+ };
+ lock.addEventListener('pointerup',end);
+ lock.addEventListener('pointercancel',()=>{start=null;lock.classList.remove('dragging');home.classList.remove('dragging');lock.style.transform='';lock.style.opacity='';home.style.filter='';home.style.transform=''});
+})();
+
+// 카카오톡: 계정 연결 없는 브라우저 내부 체험용 채팅
+const kakaoFriends=['민지','지훈','엄마','서연'];
+let kakaoContact=null,kakaoPage='friends',kakaoHistory={};
+try{kakaoHistory=JSON.parse(localStorage.getItem('iphone-kakao-v1')||'{}')||{}}catch(e){kakaoHistory={}}
+function kakaoSave(){try{localStorage.setItem('iphone-kakao-v1',JSON.stringify(kakaoHistory))}catch(e){}}
+function kakaoEscape(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openKakao(){document.getElementById('view').classList.remove('show');document.getElementById('kakaoScreen').classList.add('open');kakaoContact=null;kakaoTab('friends')}
+function kakaoTab(tab){kakaoPage=tab;kakaoContact=null;document.getElementById('kakaoForm').style.display='none';document.getElementById('kakaoTabs').style.display='flex';document.getElementById('kakaoTitle').textContent=tab==='friends'?'친구':tab==='chats'?'채팅':'더보기';const area=document.getElementById('kakaoContent');
+ if(tab==='more'){area.innerHTML='<div class="kakao-row"><div class="kakao-avatar" style="background:#fee500">T</div><div class="kakao-row-main"><b>카카오톡 체험판</b><p>GitHub Pages에서 실행되는 가상 앱</p></div></div><div class="kakao-empty">실제 카카오톡 계정과 연결되지 않습니다.<br>대화는 이 브라우저에만 저장됩니다.</div>';return}
+ let names=tab==='chats'?kakaoFriends.filter(n=>(kakaoHistory[n]||[]).length):kakaoFriends;
+ area.innerHTML=names.length?names.map((n)=>{const last=(kakaoHistory[n]||[]).at(-1);return `<div class="kakao-row" role="button" tabindex="0" onclick="kakaoChat('${n}')"><div class="kakao-avatar">${n[0]}</div><div class="kakao-row-main"><b>${n}</b><p>${last?kakaoEscape(last.text):'대화를 시작해 보세요'}</p></div><span class="kakao-muted">›</span></div>`}).join(''):'<div class="kakao-empty">아직 대화가 없어요.<br>친구 탭에서 메시지를 보내 보세요.</div>';
+}
+function kakaoChat(name){kakaoContact=name;document.getElementById('kakaoTitle').textContent=name;document.getElementById('kakaoTabs').style.display='none';document.getElementById('kakaoForm').style.display='flex';kakaoRender();}
+function kakaoRender(){if(!kakaoContact)return;const area=document.getElementById('kakaoContent');area.innerHTML='<div class="kakao-chat">'+(kakaoHistory[kakaoContact]||[]).map(m=>`<div class="kakao-bubble ${m.me?'me':'them'}">${kakaoEscape(m.text)}<time>${kakaoEscape(m.time)}</time></div>`).join('')+'</div>';area.scrollTop=area.scrollHeight}
+function kakaoBack(){if(kakaoContact){kakaoTab(kakaoPage)}else goHome()}
+function kakaoReply(t){if(/안녕|ㅎㅇ/.test(t))return '안녕~ 😊';if(/뭐해|뭐 해/.test(t))return '카톡 보고 있었어 ㅋㅋ';if(/고마워/.test(t))return '별말을 다 해!';if(/잘자/.test(t))return '잘 자! 🌙';return ['응응 ㅋㅋ','진짜?','오 그렇구나!','좋아 좋아 😄'][Math.floor(Math.random()*4)]}
+document.getElementById('kakaoForm').addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('kakaoInput'),text=input.value.trim(),to=kakaoContact;if(!text||!to)return;const now=()=>new Date().toLocaleTimeString('ko-KR',{hour:'numeric',minute:'2-digit'});(kakaoHistory[to]??=[]).push({text,me:true,time:now()});input.value='';kakaoSave();kakaoRender();setTimeout(()=>{(kakaoHistory[to]??=[]).push({text:kakaoReply(text),me:false,time:now()});kakaoSave();if(kakaoContact===to)kakaoRender()},850)});
+
+// 캘린더: 월 이동, 날짜 선택, 일정 저장/삭제
+const calendarNow=new Date();let calYear=calendarNow.getFullYear(),calMonth=calendarNow.getMonth(),calDate=new Date(calYear,calMonth,calendarNow.getDate());
+let calendarData={};try{calendarData=JSON.parse(localStorage.getItem('iphone-calendar-v1')||'{}')||{}}catch(e){}
+const calKey=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+function calSave(){try{localStorage.setItem('iphone-calendar-v1',JSON.stringify(calendarData))}catch(e){}}
+function openCalendar(){document.getElementById('calendarScreen').classList.add('open');renderCalendar()}
+function calendarToday(){const d=new Date();calYear=d.getFullYear();calMonth=d.getMonth();calDate=new Date(calYear,calMonth,d.getDate());renderCalendar()}
+function calendarMove(delta){const d=new Date(calYear,calMonth+delta,1);calYear=d.getFullYear();calMonth=d.getMonth();calDate=new Date(calYear,calMonth,1);renderCalendar()}
+function calendarChoose(day){calDate=new Date(calYear,calMonth,day);renderCalendar()}
+function renderCalendar(){
+ document.getElementById('calendarMonth').textContent=`${calYear}년 ${calMonth+1}월`;
+ const grid=document.getElementById('calendarGrid');grid.replaceChildren();
+ ['일','월','화','수','목','금','토'].forEach(w=>{const el=document.createElement('div');el.className='cal-weekday';el.textContent=w;grid.append(el)});
+ const first=new Date(calYear,calMonth,1).getDay(),days=new Date(calYear,calMonth+1,0).getDate(),today=new Date();
+ for(let i=0;i<first;i++)grid.append(document.createElement('div'));
+ for(let day=1;day<=days;day++){const d=new Date(calYear,calMonth,day),key=calKey(d),b=document.createElement('button');b.type='button';b.className='cal-day';b.textContent=day;if(calKey(today)===key)b.classList.add('today');if(calKey(calDate)===key)b.classList.add('selected');if((calendarData[key]||[]).length)b.classList.add('has-event');b.onclick=()=>calendarChoose(day);grid.append(b)}
+ const key=calKey(calDate);document.getElementById('calendarSelected').textContent=`${calDate.getMonth()+1}월 ${calDate.getDate()}일 일정`;
+ const area=document.getElementById('calendarEvents');area.replaceChildren();const events=calendarData[key]||[];
+ if(!events.length){const p=document.createElement('p');p.style.color='#92929a';p.style.fontSize='14px';p.textContent='등록된 일정이 없어요.';area.append(p)}
+ events.forEach((title,i)=>{const row=document.createElement('div');row.className='cal-event';const t=document.createElement('span');t.textContent=title;const del=document.createElement('button');del.type='button';del.textContent='삭제';del.onclick=()=>{calendarData[key].splice(i,1);calSave();renderCalendar()};row.append(t,del);area.append(row)})
+}
+document.getElementById('calendarForm').addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('calendarInput'),value=input.value.trim();if(!value)return;(calendarData[calKey(calDate)]??=[]).push(value);input.value='';calSave();renderCalendar()});
+
+// 사진: 사용자가 직접 추가한 사진을 브라우저에 저장 (서버 업로드 없음)
+let photoData=[];try{photoData=JSON.parse(localStorage.getItem('iphone-photos-v1')||'[]')||[]}catch(e){}
+let photoSelected=-1;
+function openPhotos(){document.getElementById('photosScreen').classList.add('open');renderPhotos()}
+function renderPhotos(){const grid=document.getElementById('photoGrid');grid.replaceChildren();document.getElementById('photoCount').textContent=`나의 사진 · ${photoData.length}장`;document.getElementById('photoHint').textContent=photoData.length?'사진을 누르면 크게 볼 수 있어요.':'오른쪽 위 + 추가를 눌러 사진을 넣어 보세요.';photoData.forEach((p,i)=>{const b=document.createElement('button');b.type='button';b.className='photo-thumb';const img=document.createElement('img');img.src=p.src;img.alt=`사진 ${i+1}`;b.append(img);b.onclick=()=>viewPhoto(i);grid.append(b)})}
+function viewPhoto(i){photoSelected=i;const p=photoData[i];if(!p)return;document.getElementById('photoLarge').src=p.src;document.getElementById('photoDate').textContent=p.date;document.getElementById('photoViewer').classList.add('open')}
+function closePhoto(){const viewer=document.getElementById('photoViewer');if(viewer)viewer.classList.remove('open');photoSelected=-1}
+function deletePhoto(){if(photoSelected<0)return;photoData.splice(photoSelected,1);try{localStorage.setItem('iphone-photos-v1',JSON.stringify(photoData))}catch(e){}closePhoto();renderPhotos()}
+function compressPhoto(file){return new Promise((resolve,reject)=>{const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{const ratio=Math.min(1,1100/Math.max(img.width,img.height)),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*ratio));canvas.height=Math.max(1,Math.round(img.height*ratio));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);URL.revokeObjectURL(url);resolve(canvas.toDataURL('image/jpeg',.68))};img.onerror=()=>{URL.revokeObjectURL(url);reject(Error('이미지를 읽을 수 없어요'))};img.src=url})}
+document.getElementById('photoUpload').addEventListener('change',async e=>{const files=Array.from(e.target.files||[]).filter(f=>f.type.startsWith('image/'));let added=0;for(const f of files){try{const src=await compressPhoto(f);const next=[...photoData,{src,date:new Date().toLocaleDateString('ko-KR')}];localStorage.setItem('iphone-photos-v1',JSON.stringify(next));photoData=next;added++}catch(err){alert('저장 공간이 부족하거나 사진을 읽을 수 없어요. 작은 사진으로 다시 시도해 주세요.');break}}e.target.value='';renderPhotos()});
+
+// 음악: 외부 저작권 음원 없이 Web Audio API로 연주
+const melodies=[
+ {title:'햇살 산책',notes:[262,330,392,523,392,330,294,349,440,587,440,349]},
+ {title:'별빛 밤',notes:[392,330,294,262,294,330,392,523,494,440,392,330]},
+ {title:'기분 좋은 오후',notes:[330,392,440,392,330,294,262,294,330,392,523,440]}
+];
+let musicIndex=0,musicOn=false,musicTimer=null,musicStep=0,musicAudio=null;
+function openMusic(){document.getElementById('musicScreen').classList.add('open');renderMusic()}
+function renderMusic(){document.getElementById('musicTitle').textContent=melodies[musicIndex].title;document.getElementById('musicPlay').textContent=musicOn?'⏸':'▶';document.getElementById('musicTracks').innerHTML=melodies.map((m,i)=>`<div class="music-track ${i===musicIndex?'selected':''}" onclick="musicSelect(${i})"><span style="font-size:25px;color:#ed3557">♫</span><span>${m.title}</span><span style="margin-left:auto;color:#aaa">›</span></div>`).join('')}
+function playMusicNote(freq){if(!musicAudio)return;const t=musicAudio.currentTime,o=musicAudio.createOscillator(),g=musicAudio.createGain();o.type='sine';o.frequency.value=freq;const volume=Number(document.getElementById('musicVolume').value)/100;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(volume*.14,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.32);o.connect(g);g.connect(musicAudio.destination);o.start(t);o.stop(t+.34)}
+function stopMusic(){musicOn=false;if(musicTimer){clearInterval(musicTimer);musicTimer=null}const btn=document.getElementById('musicPlay');if(btn)btn.textContent='▶'}
+function musicToggle(){if(musicOn){stopMusic();return}try{musicAudio??=new (window.AudioContext||window.webkitAudioContext)();musicAudio.resume();musicOn=true;musicStep=0;const step=()=>{playMusicNote(melodies[musicIndex].notes[musicStep%melodies[musicIndex].notes.length]);musicStep++};step();musicTimer=setInterval(step,390);renderMusic()}catch(e){alert('이 브라우저에서는 소리를 재생할 수 없어요.')}}
+function musicSelect(i){const was=musicOn;stopMusic();musicIndex=i;renderMusic();if(was)musicToggle()}
+function musicSkip(d){musicSelect((musicIndex+d+melodies.length)%melodies.length)}
+
+// 전화: 실제 통화나 전화번호 전송 없이 다이얼 체험
+let dialValue='',callTimer=null,callSeconds=0,phoneVoiceAudio=null;
+function openPhone(){document.getElementById('phoneScreen').classList.add('open');if('speechSynthesis' in window)window.speechSynthesis.getVoices();renderDial()}
+function renderDial(){document.getElementById('phoneBody').innerHTML=`<div class="phone-number" id="dialNumber"></div><div class="dial-grid" id="dialGrid"></div><button class="call-button" onclick="startFakeCall()" aria-label="전화 걸기">☎</button><button style="display:block;margin:auto;border:0;background:none;color:#777" onclick="dialErase()">⌫ 지우기</button><p style="text-align:center;color:#999;font-size:12px">통화가 연결되면 한국어 목소리로 “여보세요?”라고 말해요.<br>실제 통화가 아닌 시뮬레이션입니다.</p>`;const grid=document.getElementById('dialGrid');['1','2','3','4','5','6','7','8','9','*','0','#'].forEach(n=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>{if(dialValue.length<20)dialValue+=n;updateDial()};grid.append(b)});updateDial()}
+function updateDial(){const el=document.getElementById('dialNumber');if(el)el.textContent=dialValue||'전화번호 입력'}
+function dialErase(){dialValue=dialValue.slice(0,-1);updateDial()}
+function phoneContacts(){document.getElementById('phoneBody').innerHTML='<h2>연락처</h2>'+['엄마','민지','지훈','서연'].map(n=>`<div class="music-track" onclick="startFakeCall('${n}')">👤 ${n} <span style="margin-left:auto;color:#34c759">☎</span></div>`).join('')+'<button class="extra-action" onclick="renderDial()">‹ 키패드</button>'}
+// 기기에 내장된 한국어 음성 엔진으로 “여보세요?” 재생. 별도 파일 업로드 불필요.
+function playPhoneVoice(){if(!('speechSynthesis' in window)){alert('이 브라우저는 음성 재생을 지원하지 않아요.');return}try{window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance('여보세요?');u.lang='ko-KR';u.rate=.9;u.pitch=1.05;const voices=window.speechSynthesis.getVoices();const ko=voices.filter(v=>v.lang.toLowerCase().startsWith('ko'));u.voice=ko.find(v=>/female|여성|sora|yuna|sunhi/i.test(v.name))||ko[0]||null;window.speechSynthesis.speak(u)}catch(e){alert('음성을 재생할 수 없어요.')}}function replayPhoneVoice(){playPhoneVoice()}
+function startFakeCall(name){const target=name||dialValue;if(!target){alert('전화번호를 입력하거나 연락처를 선택해 주세요.');return}if(callTimer)clearInterval(callTimer);callSeconds=0;document.getElementById('phoneBody').innerHTML=`<div style="text-align:center;padding-top:65px"><div style="font-size:35px">👤</div><h2 id="callName"></h2><p class="call-status" id="callStatus">연결 중...</p><button class="call-button" style="background:#ff3b30" onclick="endFakeCall()" aria-label="통화 종료">✕</button><button onclick="replayPhoneVoice()" style="border:0;background:#eee;border-radius:12px;padding:12px;margin:12px">▶ 여보세요 다시 듣기</button><p style="color:#999;font-size:12px">가상 통화입니다. 실제로 연결되지 않습니다.</p></div>`;document.getElementById('callName').textContent=target;callTimer=setInterval(()=>{callSeconds++;if(callSeconds===2)playPhoneVoice();const el=document.getElementById('callStatus');if(el)el.textContent=callSeconds<2?'연결 중...':`${String(Math.floor((callSeconds-2)/60)).padStart(2,'0')}:${String((callSeconds-2)%60).padStart(2,'0')}`},1000)}
+function endFakeCall(){if('speechSynthesis' in window)window.speechSynthesis.cancel();if('speechSynthesis' in window)window.speechSynthesis.cancel();if(callTimer){clearInterval(callTimer);callTimer=null}renderDial()}
+
+</script></body></html>
+ar(--sim-brightness,1))}.phone .home{filter:none}.phone.locked .home{filter:blur(7px)}.settings-dark .settings-page{background:#1c1c1e;color:#fff}.settings-dark .settings-group{background:#2c2c2e}.settings-dark .settings-row{border-color:#444}.settings-dark .settings-row .stext{color:#fff}.settings-page{height:100%;overflow-y:auto;background:#f2f2f7;color:#111;padding:10px 16px 34px}
 .settings-title{font-size:32px;font-weight:750;letter-spacing:-1px;margin:10px 4px 18px}
 .settings-group{background:#fff;border-radius:12px;overflow:hidden;margin:0 0 23px}
 .settings-row{display:flex;align-items:center;gap:12px;min-height:48px;padding:9px 14px;border-bottom:1px solid #e5e5ea;cursor:pointer}

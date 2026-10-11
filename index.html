@@ -1,73 +1,577 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>나의 아이폰</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;min-height:100dvh;background:#202127;display:flex;justify-content:center;align-items:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:white}
-.phone{position:relative;width:min(390px,100vw);height:min(844px,94dvh);border:8px solid #111;border-radius:52px;overflow:hidden;background:linear-gradient(145deg,#152c73,#9953a3 55%,#ffae7e);box-shadow:0 20px 70px #0008}
-.island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:115px;height:32px;background:#080808;border-radius:30px;z-index:10}
-.status{position:absolute;top:20px;left:30px;font-size:14px;font-weight:700;z-index:9}
-.screen{position:absolute;inset:0;padding:75px 20px 35px;text-align:center}
-.clock{font-size:75px;font-weight:200;letter-spacing:-4px;margin-top:55px}
-.date{font-size:20px}
-.hint{position:absolute;bottom:65px;left:0;right:0;font-size:15px}
-.home{display:none}
-.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:23px 10px;margin-top:25px}
-.app{cursor:pointer;text-align:center;font-size:11px}
-.icon{width:58px;height:58px;border-radius:15px;display:grid;place-items:center;font-size:30px;margin:0 auto 7px;background:#fff;color:#222}
-.dock{position:absolute;bottom:42px;left:18px;right:18px;background:#ffffff55;border-radius:26px;padding:12px;display:flex;justify-content:space-around}
-.dock .icon{margin:0}
-.bar{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:125px;height:5px;border-radius:5px;background:white;z-index:12;cursor:pointer}
-.appview{display:none;position:absolute;inset:0;background:#f5f5f7;color:#111;padding:80px 25px;text-align:center;z-index:8}
-.appview h1{margin-top:50px}
-@media(max-width:600px){body{background:#000}.phone{width:100vw;height:100dvh;border:0;border-radius:0;box-shadow:none}}
-</style>
-</head>
-<body>
-<div class="phone">
-<div class="island"></div>
-<div class="status" id="smalltime">9:41</div>
-<div class="screen" id="lock" onclick="unlock()">
-<div class="date" id="date"></div>
-<div class="clock" id="clock">9:41</div>
-<div class="hint">화면을 누르거나 위로 밀어 잠금 해제 ↑</div>
-</div>
-<div class="screen home" id="home">
-<div class="apps" id="apps"></div>
-<div class="dock">
-<div class="app" onclick="openApp('전화')"><div class="icon" style="background:#38c65a;color:white">☎</div></div>
-<div class="app" onclick="openApp('Safari')"><div class="icon">🌐</div></div>
-<div class="app" onclick="openApp('메시지')"><div class="icon" style="background:#38c65a;color:white">💬</div></div>
-<div class="app" onclick="openApp('음악')"><div class="icon">🎵</div></div>
-</div>
-</div>
-<div class="appview" id="appview">
-<h1 id="appname"></h1>
-<p>앱이 실행되었어요!</p>
-<p>아래 막대를 누르면 홈으로 돌아가요.</p>
-</div>
-<div class="bar" onclick="goHome()"></div>
-</div>
-<script>
-const names=[['📅','캘린더'],['📷','카메라'],['🖼️','사진'],['⚙️','설정'],['☀️','날씨'],['📝','메모'],['🕒','시계'],['🗺️','지도']];
-document.getElementById('apps').innerHTML=names.map(([emoji,name])=>'<div class="app" onclick="openApp(\''+name+'\')"><div class="icon">'+emoji+'</div>'+name+'</div>').join('');
-function updateTime(){
-const now=new Date();
-const t=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
-document.getElementById('clock').textContent=t;
-document.getElementById('smalltime').textContent=t;
-document.getElementById('date').textContent=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'long'}).format(now);
-}
-updateTime();setInterval(updateTime,10000);
-function unlock(){document.getElementById('lock').style.display='none';document.getElementById('home').style.display='block'}
-function openApp(name){document.getElementById('appname').textContent=name;document.getElementById('appview').style.display='block'}
-function goHome(){document.getElementById('lock').style.display='none';document.getElementById('home').style.display='block';document.getElementById('appview').style.display='none'}
-let startY=0;
-document.getElementById('lock').addEventListener('touchstart',e=>startY=e.touches[0].clientY,{passive:true});
-document.getElementById('lock').addEventListener('touchend',e=>{if(startY-e.changedTouches[0].clientY>40)unlock()},{passive:true});
-</script>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+        <meta name="theme-color" content="#090b16">
+        <title>iPhone Experience</title>
+        <style>
+            * {
+                box-sizing: border-box
+            }
+
+            html,body {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+                color: white
+            }
+
+            body {
+                background: radial-gradient(circle at 50% 25%,#33394b,#090b11 68%);
+                display: grid;
+                place-items: center
+            }
+
+            .phone {
+                width: 390px;
+                height: min(844px,94dvh);
+                position: relative;
+                overflow: hidden;
+                border: 8px solid #17191f;
+                border-radius: 55px;
+                background: #141529;
+                box-shadow: 0 0 0 2px #777983,0 35px 100px #000b;
+                isolation: isolate
+            }
+
+            .wallpaper {
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(ellipse at 77% 85%,#fdadbc 0%,#b86fe1 26%,transparent 54%),radial-gradient(ellipse at 5% 10%,#123c88 4%,#5247b5 45%,transparent 72%),linear-gradient(145deg,#050d2c,#543a9c 52%,#d75eae);
+                filter: saturate(1.2)
+            }
+
+            .wallpaper:after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg,#0003,transparent 35%,#0002)
+            }
+
+            .island {
+                position: absolute;
+                z-index: 30;
+                top: 11px;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 32px;
+                width: 118px;
+                border-radius: 25px;
+                background: #050505;
+                box-shadow: 0 1px 1px #ffffff25
+            }
+
+            .island:after {
+                content: '';
+                position: absolute;
+                right: 12px;
+                top: 12px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #101d30
+            }
+
+            .status {
+                position: absolute;
+                z-index: 25;
+                top: 20px;
+                left: 31px;
+                right: 30px;
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+                font-weight: 650;
+                pointer-events: none
+            }
+
+            .status .right {
+                display: flex;
+                gap: 7px;
+                align-items: center
+            }
+
+            .battery {
+                width: 21px;
+                height: 10px;
+                border: 1.5px solid white;
+                border-radius: 3px;
+                padding: 1.5px;
+                position: relative
+            }
+
+            .battery:after {
+                content: '';
+                position: absolute;
+                right: -4px;
+                top: 2px;
+                width: 2px;
+                height: 4px;
+                background: #fff9;
+                border-radius: 2px
+            }
+
+            .battery b {
+                display: block;
+                width: 75%;
+                height: 100%;
+                background: white;
+                border-radius: 1px
+            }
+
+            .screen {
+                position: absolute;
+                inset: 0;
+                transition: opacity .4s,transform .5s;
+                z-index: 5
+            }
+
+            .lock {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 100px;
+                cursor: pointer
+            }
+
+            .lock-date {
+                font-size: 20px;
+                font-weight: 500;
+                text-shadow: 0 2px 12px #0004
+            }
+
+            .lock-time {
+                font-size: 82px;
+                letter-spacing: -5px;
+                font-weight: 200;
+                line-height: 1.18;
+                text-shadow: 0 4px 25px #0002
+            }
+
+            .lock-hint {
+                position: absolute;
+                bottom: 65px;
+                font-size: 13px;
+                opacity: .85;
+                animation: float 2.5s infinite
+            }
+
+            .lock-bottom {
+                position: absolute;
+                bottom: 48px;
+                left: 38px;
+                right: 38px;
+                display: flex;
+                justify-content: space-between
+            }
+
+            .round {
+                height: 46px;
+                width: 46px;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                background: #15132365;
+                backdrop-filter: blur(20px);
+                font-size: 22px
+            }
+
+            .home {
+                opacity: 0;
+                pointer-events: none;
+                transform: scale(1.07);
+                padding: 76px 19px 34px
+            }
+
+            .home.active {
+                opacity: 1;
+                pointer-events: auto;
+                transform: scale(1)
+            }
+
+            .lock.hidden {
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-12%)
+            }
+
+            .widget {
+                width: 100%;
+                height: 133px;
+                border-radius: 24px;
+                background: #ffffff27;
+                backdrop-filter: blur(25px);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px;
+                margin-bottom: 28px;
+                border: 1px solid #ffffff25;
+                box-shadow: 0 6px 20px #0002
+            }
+
+            .widget .degree {
+                font-size: 45px;
+                font-weight: 300
+            }
+
+            .widget .city {
+                font-size: 15px;
+                font-weight: 600
+            }
+
+            .widget .details {
+                font-size: 12px;
+                opacity: .85
+            }
+
+            .apps {
+                display: grid;
+                grid-template-columns: repeat(4,minmax(0,1fr));
+                gap: 23px 7px
+            }
+
+            .app {
+                text-align: center;
+                cursor: pointer;
+                user-select: none
+            }
+
+            .app-icon {
+                height: 59px;
+                width: 59px;
+                margin: auto auto 6px;
+                border-radius: 15px;
+                background: linear-gradient(145deg,#fff,#e7e8ef);
+                display: grid;
+                place-items: center;
+                color: #20212a;
+                font-size: 30px;
+                box-shadow: 0 5px 14px #0002;
+                transition: transform .15s
+            }
+
+            .app:active .app-icon {
+                transform: scale(.87)
+            }
+
+            .app-label {
+                font-size: 11px;
+                text-shadow: 0 1px 5px #0008;
+                white-space: nowrap
+            }
+
+            .dock {
+                position: absolute;
+                bottom: 33px;
+                left: 13px;
+                right: 13px;
+                padding: 12px 9px;
+                border-radius: 29px;
+                background: #ffffff43;
+                backdrop-filter: blur(25px);
+                display: flex;
+                justify-content: space-around;
+                border: 1px solid #ffffff24
+            }
+
+            .dock .app-icon {
+                margin: 0
+            }
+
+            .dock .app-label {
+                display: none
+            }
+
+            .indicator {
+                position: absolute;
+                bottom: 9px;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 5px;
+                width: 125px;
+                background: white;
+                border-radius: 6px;
+                z-index: 40;
+                cursor: pointer
+            }
+
+            .page {
+                position: absolute;
+                inset: 0;
+                background: #f6f6fa;
+                color: #14151b;
+                z-index: 15;
+                transform: translateY(105%);
+                transition: transform .45s cubic-bezier(.2,.85,.2,1);
+                padding: 75px 22px 35px
+            }
+
+            .page.open {
+                transform: translateY(0)
+            }
+
+            .page-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: #2674e8;
+                font-size: 15px
+            }
+
+            .page h1 {
+                font-size: 33px;
+                margin: 32px 0 20px;
+                letter-spacing: -1px
+            }
+
+            .page .panel {
+                background: white;
+                border-radius: 17px;
+                padding: 18px;
+                margin: 15px 0;
+                box-shadow: 0 2px 14px #00000008
+            }
+
+            .page .panel p {
+                color: #737681;
+                font-size: 14px;
+                line-height: 1.6
+            }
+
+            .page .back {
+                background: none;
+                border: 0;
+                color: #2674e8;
+                font-size: 16px;
+                cursor: pointer;
+                padding: 0
+            }
+
+            .toast {
+                position: absolute;
+                top: 67px;
+                left: 22px;
+                right: 22px;
+                background: #1b1b26cc;
+                backdrop-filter: blur(25px);
+                border-radius: 19px;
+                padding: 15px;
+                z-index: 45;
+                display: none;
+                font-size: 13px
+            }
+
+            .toast.show {
+                display: block;
+                animation: pop .3s
+            }
+
+            .dots {
+                position: absolute;
+                bottom: 129px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-size: 15px;
+                letter-spacing: 3px;
+                opacity: .75
+            }
+
+            @keyframes float {
+                50% {
+                    transform: translateY(-7px)
+                }
+            }
+
+            @keyframes pop {
+                from {
+                    opacity: 0;
+                    transform: translateY(-12px)
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0)
+                }
+            }
+
+            @media(max-width: 600px) {
+                body {
+                    background:#090b16
+                }
+
+                .phone {
+                    width: 100vw;
+                    height: 100dvh;
+                    border: 0;
+                    border-radius: 0;
+                    box-shadow: none
+                }
+
+                .island {
+                    top: max(11px,env(safe-area-inset-top))
+                }
+
+                .status {
+                    top: max(20px,calc(env(safe-area-inset-top) + 9px))
+                }
+
+                .indicator {
+                    bottom: max(9px,env(safe-area-inset-bottom))
+                }
+
+                .dock {
+                    bottom: max(33px,calc(env(safe-area-inset-bottom) + 24px))
+                }
+
+                .dots {
+                    bottom: max(129px,calc(env(safe-area-inset-bottom) + 120px))
+                }
+            }
+
+            @media(max-height: 740px) {
+                .widget {
+                    height:105px;
+                    margin-bottom: 18px
+                }
+
+                .apps {
+                    gap: 13px 7px
+                }
+
+                .app-icon {
+                    width: 52px;
+                    height: 52px;
+                    font-size: 26px
+                }
+
+                .home {
+                    padding-top: 64px
+                }
+
+                .lock-time {
+                    font-size: 70px
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main class="phone" id="phone">
+            <div class="wallpaper"></div>
+            <div class="island"></div>
+            <div class="status">
+                <span id="statusTime">9:41</span>
+                <span class="right">
+                    <span>▂▄▆</span>
+                    <span>◕</span>
+                    <span class="battery">
+                        <b></b>
+                    </span>
+                </span>
+            </div>
+            <section class="screen lock" id="lock" aria-label="잠금 화면">
+                <div class="lock-date" id="lockDate"></div>
+                <div class="lock-time" id="lockTime"></div>
+                <div class="lock-bottom">
+                    <div class="round">♜</div>
+                    <div class="round">◎</div>
+                </div>
+                <div class="lock-hint">위로 밀거나 화면을 눌러 잠금 해제 ↑</div>
+            </section>
+            <section class="screen home" id="home">
+                <div class="widget">
+                    <div>
+                        <div class="city">나의 iPhone</div>
+                        <div class="degree">24°</div>
+                        <div class="details">맑음 · 오늘도 좋은 하루</div>
+                    </div>
+                    <div style="font-size:55px">☀️</div>
+                </div>
+                <div class="apps" id="apps"></div>
+                <div class="dots">● ○</div>
+                <div class="dock" id="dock"></div>
+            </section>
+            <section class="page" id="page">
+                <div class="page-header">
+                    <button class="back" onclick="goHome()">‹ 홈</button>
+                    <span id="pageTag">APP</span>
+                </div>
+                <h1 id="pageTitle"></h1>
+                <div class="panel">
+                    <strong id="panelTitle"></strong>
+                    <p id="panelText"></p>
+                </div>
+            </section>
+            <div class="toast" id="toast">알림</div>
+            <div class="indicator" onclick="goHome()" title="홈으로"></div>
+        </main>
+        <script>
+            const apps = [['📅', '캘린더', '#fff'], ['📷', '카메라', '#dfe1e9'], ['🖼️', '사진', '#fff'], ['⚙️', '설정', '#a9abb4'], ['☀️', '날씨', '#4c9cff'], ['📝', '메모', '#fff2b6'], ['🕒', '시계', '#181a25'], ['🗺️', '지도', '#e6f5ff'], ['📁', '파일', '#e5efff'], ['❤️', '건강', '#fff'], ['🛍️', '스토어', '#287af3'], ['🎵', '음악', '#ff5274']];
+            const dockApps = [['☎', '전화', '#40ca65'], ['🌐', 'Safari', '#f5f8ff'], ['💬', '메시지', '#42ca62'], ['📸', '카메라', '#e8e8ee']];
+            function draw(items, target) {
+                document.getElementById(target).innerHTML = items.map( ([emoji,name,color]) => '<div class="app" role="button" tabindex="0" data-app="' + name + '"><div class="app-icon" style="background:' + color + '">' + emoji + '</div><div class="app-label">' + name + '</div></div>').join('')
+            }
+            draw(apps, 'apps');
+            draw(dockApps, 'dock');
+            document.querySelectorAll('.app').forEach(el => {
+                el.addEventListener('click', () => openApp(el.dataset.app));
+                el.addEventListener('keydown', e => {
+                    if (e.key === 'Enter')
+                        openApp(el.dataset.app)
+                }
+                )
+            }
+            );
+            function time() {
+                const d = new Date();
+                const t = d.getHours() + ':' + String(d.getMinutes()).padStart(2, '0');
+                document.getElementById('statusTime').textContent = t;
+                document.getElementById('lockTime').textContent = t;
+                document.getElementById('lockDate').textContent = new Intl.DateTimeFormat('ko-KR',{
+                    month: 'long',
+                    day: 'numeric',
+                    weekday: 'long'
+                }).format(d)
+            }
+            time();
+            setInterval(time, 10000);
+            function unlock() {
+                document.getElementById('lock').classList.add('hidden');
+                document.getElementById('home').classList.add('active')
+            }
+            function openApp(name) {
+                document.getElementById('pageTitle').textContent = name;
+                document.getElementById('pageTag').textContent = 'iPhone';
+                document.getElementById('panelTitle').textContent = name + ' 앱';
+                document.getElementById('panelText').textContent = '앱이 열렸어요! 이 화면은 앞으로 실제 기능을 채워 넣을 공간이에요. 아래 막대를 누르면 홈으로 돌아갈 수 있어요.';
+                document.getElementById('page').classList.add('open')
+            }
+            function goHome() {
+                unlock();
+                document.getElementById('page').classList.remove('open')
+            }
+            document.getElementById('lock').addEventListener('click', unlock);
+            let startY = 0;
+            document.getElementById('phone').addEventListener('touchstart', e => {
+                startY = e.touches[0].clientY
+            }
+            , {
+                passive: true
+            });
+            document.getElementById('phone').addEventListener('touchend', e => {
+                if (startY - e.changedTouches[0].clientY > 65) {
+                    if (!document.getElementById('lock').classList.contains('hidden'))
+                        unlock();
+                    else
+                        goHome()
+                }
+            }
+            , {
+                passive: true
+            });
+        </script>
+    </body>
 </html>

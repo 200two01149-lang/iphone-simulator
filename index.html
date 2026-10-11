@@ -456,6 +456,175 @@
                     font-size: 70px
                 }
             }
+
+            /* Messages app */
+            .page.messages-mode {
+                padding: 0;
+                background: #f6f6f9;
+                color: #16171b;
+                display: flex;
+                flex-direction: column
+            }
+
+            .page.messages-mode .page-header,.page.messages-mode>h1,.page.messages-mode>.panel {
+                display: none
+            }
+
+            .messages-ui {
+                display: none;
+                flex-direction: column;
+                min-height: 0;
+                flex: 1;
+                padding-top: 59px
+            }
+
+            .messages-mode .messages-ui {
+                display: flex
+            }
+
+            .msg-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 18px 12px;
+                border-bottom: 1px solid #e4e4ea;
+                background: #fbfbfd
+            }
+
+            .msg-back {
+                border: 0;
+                background: none;
+                color: #1674f5;
+                font-size: 17px;
+                cursor: pointer;
+                padding: 9px 0
+            }
+
+            .msg-contact {
+                text-align: center;
+                font-size: 12px;
+                font-weight: 600
+            }
+
+            .msg-avatar {
+                height: 43px;
+                width: 43px;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                margin: auto auto 4px;
+                background: linear-gradient(135deg,#8d9bf7,#eeb4d9);
+                font-size: 23px
+            }
+
+            .msg-sub {
+                color: #898b97;
+                font-size: 11px;
+                font-weight: 400
+            }
+
+            .msg-more {
+                font-size: 23px;
+                color: #1674f5;
+                width: 38px;
+                text-align: right
+            }
+
+            .msg-list {
+                flex: 1;
+                overflow-y: auto;
+                min-height: 0;
+                padding: 18px 14px 12px;
+                display: flex;
+                flex-direction: column;
+                gap: 9px;
+                overscroll-behavior: contain
+            }
+
+            .msg-day {
+                text-align: center;
+                font-size: 11px;
+                color: #9395a1;
+                margin: 5px 0 10px
+            }
+
+            .bubble {
+                max-width: 82%;
+                border-radius: 19px;
+                padding: 10px 14px;
+                font-size: 15px;
+                line-height: 1.4;
+                overflow-wrap: anywhere;
+                white-space: pre-wrap
+            }
+
+            .bubble.me {
+                background: #2188ff;
+                color: #fff;
+                align-self: flex-end;
+                border-bottom-right-radius: 5px
+            }
+
+            .bubble.them {
+                background: #e5e5ea;
+                color: #15161b;
+                align-self: flex-start;
+                border-bottom-left-radius: 5px
+            }
+
+            .msg-time {
+                font-size: 10px;
+                opacity: .7;
+                margin-top: 4px;
+                text-align: right
+            }
+
+            .typing {
+                color: #777;
+                font-size: 13px;
+                padding: 7px 15px
+            }
+
+            .msg-form {
+                display: flex;
+                align-items: end;
+                gap: 9px;
+                padding: 10px 13px max(28px,env(safe-area-inset-bottom));
+                background: #fbfbfd;
+                border-top: 1px solid #e6e6eb
+            }
+
+            .msg-input {
+                flex: 1;
+                min-width: 0;
+                max-height: 110px;
+                resize: none;
+                border: 1px solid #d5d5dc;
+                border-radius: 20px;
+                padding: 11px 13px;
+                font: 15px -apple-system,BlinkMacSystemFont,sans-serif;
+                outline: none;
+                background: white;
+                color: #111
+            }
+
+            .msg-send {
+                border: 0;
+                border-radius: 50%;
+                height: 36px;
+                width: 36px;
+                background: #2188ff;
+                color: white;
+                font-size: 22px;
+                font-weight: bold;
+                cursor: pointer;
+                flex-shrink: 0
+            }
+
+            .msg-send:disabled {
+                opacity: .4;
+                cursor: default
+            }
         </style>
     </head>
     <body>
@@ -504,6 +673,21 @@
                     <strong id="panelTitle"></strong>
                     <p id="panelText"></p>
                 </div>
+                <div class="messages-ui" id="messagesUI">
+                    <div class="msg-top">
+                        <button class="msg-back" onclick="goHome()">‹ 홈</button>
+                        <div class="msg-contact">
+                            <div class="msg-avatar">😊</div>
+                            친구<div class="msg-sub">자동 답장 · 데모</div>
+                        </div>
+                        <div class="msg-more">···</div>
+                    </div>
+                    <div class="msg-list" id="messageList" aria-live="polite"></div>
+                    <form class="msg-form" id="messageForm">
+                        <textarea id="messageInput" class="msg-input" rows="1" maxlength="500" placeholder="iMessage" aria-label="메시지 입력"></textarea>
+                        <button class="msg-send" id="messageSend" type="submit" aria-label="전송">↑</button>
+                    </form>
+                </div>
             </section>
             <div class="toast" id="toast">알림</div>
             <div class="indicator" onclick="goHome()" title="홈으로"></div>
@@ -543,6 +727,9 @@
                 document.getElementById('home').classList.add('active')
             }
             function openApp(name) {
+                document.getElementById('page').classList.toggle('messages-mode', name === '메시지');
+                if (name === '메시지')
+                    renderMessages();
                 document.getElementById('pageTitle').textContent = name;
                 document.getElementById('pageTag').textContent = 'iPhone';
                 document.getElementById('panelTitle').textContent = name + ' 앱';
@@ -551,7 +738,8 @@
             }
             function goHome() {
                 unlock();
-                document.getElementById('page').classList.remove('open')
+                document.getElementById('page').classList.remove('open');
+                document.getElementById('messageInput').blur()
             }
             document.getElementById('lock').addEventListener('click', unlock);
             let startY = 0;
@@ -572,6 +760,105 @@
             , {
                 passive: true
             });
+
+            // This is a local demo conversation, not a real messaging service.
+            const STORAGE_KEY = 'iphone-demo-messages-v1';
+            let messages = [];
+            try {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+                if (Array.isArray(saved))
+                    messages = saved.filter(m => m && typeof m.text === 'string' && (m.from === 'me' || m.from === 'them')).slice(-100)
+            } catch (e) {}
+            if (!messages.length)
+                messages = [{
+                    from: 'them',
+                    text: '안녕! 👋 메시지 앱에 온 걸 환영해. 뭐 하고 있어?',
+                    time: Date.now()
+                }];
+            function saveMessages() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages.slice(-100)))
+                } catch (e) {}
+            }
+            function renderMessages() {
+                const list = document.getElementById('messageList');
+                list.replaceChildren();
+                const day = document.createElement('div');
+                day.className = 'msg-day';
+                day.textContent = '친구와의 대화 · 이 기기에만 저장됨';
+                list.append(day);
+                for (const msg of messages) {
+                    const b = document.createElement('div');
+                    b.className = 'bubble ' + msg.from;
+                    const txt = document.createElement('div');
+                    txt.textContent = msg.text;
+                    const time = document.createElement('div');
+                    time.className = 'msg-time';
+                    time.textContent = new Date(msg.time).toLocaleTimeString('ko-KR', {
+                        hour: 'numeric',
+                        minute: '2-digit'
+                    });
+                    b.append(txt, time);
+                    list.append(b)
+                }
+                list.scrollTop = list.scrollHeight
+            }
+            function getReply(input) {
+                const t = input.toLowerCase();
+                if (/안녕|하이|hello|ㅎㅇ/.test(t))
+                    return '안녕!! 😊 오늘 하루 어땠어?';
+                if (/뭐해|뭐 해/.test(t))
+                    return '너랑 채팅하고 있지! 😆';
+                if (/이름|누구/.test(t))
+                    return '나는 이 아이폰 속 가상 친구야!';
+                if (/고마워|감사/.test(t))
+                    return '천만에! 💙';
+                if (/잘자|굿나잇/.test(t))
+                    return '잘 자~ 좋은 꿈 꿔 🌙';
+                if (/날씨/.test(t))
+                    return '실제 날씨는 확인할 수 없지만, 좋은 날이길 바라! ☀️';
+                return ['오 정말? 더 얘기해줘! 😊', 'ㅋㅋㅋ 재밌다 😆', '그렇구나! 나도 궁금해 👀', '좋아! 계속 이야기하자 💬', '우와, 멋진데? ✨'][Math.floor(Math.random() * 5)]
+            }
+            const form = document.getElementById('messageForm')
+              , input = document.getElementById('messageInput')
+              , send = document.getElementById('messageSend');
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                const text = input.value.trim();
+                if (!text)
+                    return;
+                messages.push({
+                    from: 'me',
+                    text,
+                    time: Date.now()
+                });
+                messages = messages.slice(-100);
+                saveMessages();
+                input.value = '';
+                renderMessages();
+                send.disabled = true;
+                setTimeout( () => {
+                    messages.push({
+                        from: 'them',
+                        text: getReply(text),
+                        time: Date.now()
+                    });
+                    messages = messages.slice(-100);
+                    saveMessages();
+                    if (document.getElementById('page').classList.contains('messages-mode'))
+                        renderMessages();
+                    send.disabled = false
+                }
+                , 800 + Math.random() * 800)
+            }
+            );
+            input.addEventListener('keydown', e => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    form.requestSubmit()
+                }
+            }
+            );
         </script>
     </body>
 </html>
